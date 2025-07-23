@@ -5,6 +5,7 @@ import { SiteFooterComponent } from './site-footer/site-footer.component';
 import { CommonModule } from '@angular/common';
 import { ThemeServiceService } from './theme-service.service';
 import { Subscription } from 'rxjs';
+import { HomeComponent } from "./home/home.component";
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,8 @@ import { Subscription } from 'rxjs';
     CommonModule,
     SiteHeaderComponent,
     SiteFooterComponent,
-    RouterModule,
-  ],
+    HomeComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

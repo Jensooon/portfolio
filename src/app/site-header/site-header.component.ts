@@ -8,7 +8,7 @@ import { MobileToggleComponent } from './mobile-toggle/mobile-toggle.component';
 @Component({
   selector: 'app-site-header',
   standalone: true,
-  imports: [Bb8ToggleComponent, RouterModule, MobileToggleComponent],
+  imports: [Bb8ToggleComponent, MobileToggleComponent],
   templateUrl: './site-header.component.html',
   styleUrl: './site-header.component.css',
 })

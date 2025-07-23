@@ -3,16 +3,18 @@
   [class.dark-class]="isComponentBGDark"
   [class.white-class]="!isComponentBGDark"
 >
-  <div class="profile-content">
-    <app-user-card class="user-card"></app-user-card>
 
-    <div class="headings">
-      <h1 class="title">Jenson Wintle</h1>
-      <h2>Software Engineer</h2>
+  <section appScrollReveal id="home">
+
+    <div class="profile-content">
+      <app-user-card class="user-card"></app-user-card>
+  
+      <div class="headings">
+        <h1 class="title">Jenson Wintle</h1>
+        <h2>Software Engineer</h2>
+      </div>
     </div>
-  </div>
 
-  <section appScrollReveal>
     <h1 class="sub-title">What are my interests?</h1>
     <div class="four-by-four">
       <p>🖥️ Software Engineering</p>
@@ -20,9 +22,6 @@
       <p>📐 Mathematics & Problem Solving</p>
       <p>🎸 Practicing & Playing Guitar</p>
     </div>
-  </section>
-
-  <section appScrollReveal>
     <h1 class="sub-title">Projects</h1>
     <a href="https://github.com/Jensooon/AzureAiWebsiteJW">
       - Explore Azure AI capabilities in a website. Describe images, translate
@@ -36,6 +35,22 @@
       >- Improve prodcutivity using these useful autohotkey scripts.</a
     >
   </section>
+  
+
+
+  <section appScrollReveal id="education">
+    <app-education></app-education>
+  </section>
+
+  <section appScrollReveal id="experience">
+    <app-experience></app-experience>
+  </section>
+
+  <section appScrollReveal id="dissertation">
+    <app-dissertation></app-dissertation>
+  </section>
+
+
   <!-- 
   <section appScrollReveal>
     <h1 class="sub-title">Skills</h1>

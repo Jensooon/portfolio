@@ -2,14 +2,14 @@ import { Component, ElementRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ThemeServiceService } from '../theme-service.service';
 import { ScrollRevealDirective } from '../scroll-reveal.directive';
-import { RouterModule } from '@angular/router';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-education',
   standalone: true,
-  imports: [ScrollRevealDirective, RouterModule, FontAwesomeModule],
+  imports: [ScrollRevealDirective, FontAwesomeModule],
   templateUrl: './education.component.html',
   styleUrl: './education.component.css',
 })
