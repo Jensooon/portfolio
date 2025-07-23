@@ -7,28 +7,23 @@
       <a
         [class.dark-navHeader]="isComponentBGDark"
         [class.white-navHeader]="!isComponentBGDark"
-        href="#home"
-        >Home</a
+        [ngClass]="{ 'active-link': activeSection === 'home' }"  (click)="scrollToSection('home')"  >Home</a
       >
       <a
         [class.dark-navHeader]="isComponentBGDark"
         [class.white-navHeader]="!isComponentBGDark"
-        href="#education"
-        >Education</a
+        [ngClass]="{ 'active-link': activeSection === 'education' }" (click)="scrollToSection('education')" >Education</a
       >
       <a
         [class.dark-navHeader]="isComponentBGDark"
         [class.white-navHeader]="!isComponentBGDark"
-        href="#experience"
-        >Experience</a
+        [ngClass]="{ 'active-link': activeSection === 'experience' }" (click)="scrollToSection('experience')" >Experience</a
       >
       <a
-      [class.dark-navHeader]="isComponentBGDark"
-      [class.white-navHeader]="!isComponentBGDark"
-      href="#dissertation"
-
-      >Dissertation</a
-    >
+        [class.dark-navHeader]="isComponentBGDark"
+        [class.white-navHeader]="!isComponentBGDark"
+        [ngClass]="{ 'active-link': activeSection === 'dissertation' }" (click)="scrollToSection('dissertation')" >Dissertation</a
+      >
     </div>
     <app-bb8-toggle class="bb8"></app-bb8-toggle>
     <app-mobile-toggle class="mobile-toggle"></app-mobile-toggle>
