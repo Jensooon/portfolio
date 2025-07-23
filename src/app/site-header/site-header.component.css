@@ -1,3 +1,15 @@
+:host { /* Target the host element of the component */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures the header stays on top of other content */
+  /* Add your background color and other header specific styles here */
+  /* Example: background-color: #333; */
+  /* Example: box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
+}
+
+
 .wrapper {
   display: flex;
   justify-content: space-between;

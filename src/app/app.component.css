@@ -7,5 +7,6 @@
 }
 
 .middle {
+  padding-top: 70px; /* Adjust as needed */
   flex-grow: 1; /* Ensure the middle element grows to fill available space */
 }

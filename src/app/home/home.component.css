@@ -14,6 +14,18 @@
     "user-card headings"
     "user-card headings";
 }
+#home{
+  scroll-margin-top: 100px; /* This value should be equal to your header's height */
+}
+#education{
+  scroll-margin-top: 100px; /* This value should be equal to your header's height */
+}
+#experience{
+  scroll-margin-top: 100px; /* This value should be equal to your header's height */
+}
+#dissertation {
+  scroll-margin-top: 100px; /* This value should be equal to your header's height */
+}
 
 .headings {
   grid-area: headings;
