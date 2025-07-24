@@ -1,0 +1,53 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.skills-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-list li {
+  display: flex;
+  align-items: center;
+}
+
+.skills-list i {
+  font-size: 24px;
+  margin-right: 10px;
+  width: 30px; /* Fixed width for alignment */
+}
+
+h5 {
+  margin-top: -1%;
+}
+
+/* Container needed to position the overlay. Adjust the width as needed */
+.container {
+  position: relative;
+  padding: 0.2%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 5%;
+}
+
+/* Make the image to responsive */
+.image {
+  width: 60px;
+  height: 60px;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.container:hover .image {
+  transform: scale(1.5);
+  transition: transform 0.5s ease;
+}

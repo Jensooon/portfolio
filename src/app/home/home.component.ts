@@ -6,11 +6,13 @@ import { UserCardComponent } from './user-card/user-card.component';
 import { EducationComponent } from '../education/education.component';
 import { ExperienceComponent } from '../experience/experience.component';
 import { DissertationComponent } from '../dissertation/dissertation.component';
+import { AboutComponent } from '../about/about.component';
+import { ProjectsComponent } from '../projects/projects.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ScrollRevealDirective, UserCardComponent, EducationComponent, ExperienceComponent, DissertationComponent],
+  imports: [ScrollRevealDirective, UserCardComponent, AboutComponent, ProjectsComponent, EducationComponent, ExperienceComponent, DissertationComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

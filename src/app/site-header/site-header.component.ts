@@ -27,7 +27,7 @@ export class SiteHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   // It's a numerical representation of a CSS property, not styling in TS.
   private headerHeight: number = 70; // <-- Set this to your desired header height in pixels (e.g., 70, 80, 100)
 
-  sectionIds: string[] = ['home', 'education', 'experience', 'dissertation'];
+  sectionIds: string[] = ['home', 'about', 'projects', 'dissertation'];
 
   constructor(
     private themeService: ThemeServiceService,
