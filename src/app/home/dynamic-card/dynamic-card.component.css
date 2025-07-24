@@ -45,7 +45,7 @@
   text-align: left;
   font-size: 16px; /* 14px */
   font-weight: 500;
-  font-family: "Caveat", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .table-row {

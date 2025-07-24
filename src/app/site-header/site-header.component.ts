@@ -1,19 +1,19 @@
-import { Component, HostListener, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-import { Bb8ToggleComponent } from './bb8-toggle/bb8-toggle.component';
+import { Component, HostListener, OnInit, AfterViewInit, OnDestroy, HostBinding } from '@angular/core';
+import { CommonModule, ViewportScroller } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ThemeServiceService } from '../theme-service.service';
-import { RouterModule } from '@angular/router';
+import { Bb8ToggleComponent } from './bb8-toggle/bb8-toggle.component';
 import { MobileToggleComponent } from './mobile-toggle/mobile-toggle.component';
-import { ViewportScroller, CommonModule } from '@angular/common'; // CommonModule for ngClass
 
 @Component({
   selector: 'app-site-header',
   standalone: true,
   imports: [
+    CommonModule,
+    RouterModule,
     Bb8ToggleComponent,
     MobileToggleComponent,
-    RouterModule,
-    CommonModule
   ],
   templateUrl: './site-header.component.html',
   styleUrl: './site-header.component.css',
@@ -23,11 +23,22 @@ export class SiteHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   private themeSubscription?: Subscription;
 
   activeSection: string | null = null;
-  // IMPORTANT: This 'headerHeight' MUST MATCH the 'height' defined in your CSS :host selector.
-  // It's a numerical representation of a CSS property, not styling in TS.
-  private headerHeight: number = 70; // <-- Set this to your desired header height in pixels (e.g., 70, 80, 100)
+  private headerHeight: number = 70;
+  private sectionIds: string[] = ['home', 'about', 'projects', 'dissertation'];
 
-  sectionIds: string[] = ['home', 'about', 'projects', 'dissertation'];
+  @HostBinding('class.scrolled')
+  isScrolled: boolean = false;
+
+  // 👇 These getters apply the correct theme class to the host element
+  @HostBinding('class.light-theme')
+  get isLightTheme() {
+    return !this.isComponentBGDark;
+  }
+
+  @HostBinding('class.dark-theme')
+  get isDarkTheme() {
+    return this.isComponentBGDark;
+  }
 
   constructor(
     private themeService: ThemeServiceService,
@@ -43,7 +54,6 @@ export class SiteHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    // We can still call updateActiveSection here to set initial state on load
     this.updateActiveSection();
   }
 
@@ -55,10 +65,9 @@ export class SiteHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
+    this.isScrolled = window.scrollY > 0;
     this.updateActiveSection();
   }
-
-  // Removed @HostListener('window:resize') as height is now fixed by CSS
 
   updateActiveSection(): void {
     let currentActive: string | null = null;

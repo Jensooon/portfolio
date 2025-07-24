@@ -1,34 +1,33 @@
 <div
-  [class.dark-class-header]="isComponentBGDark"
-  [class.white-class-header]="!isComponentBGDark"
 >
   <div class="wrapper">
     <div class="header">
           jensonwintle.com
     </div>
-    <div class="left">
+    <div class="headings">
       <a
         [class.dark-navHeader]="isComponentBGDark"
         [class.white-navHeader]="!isComponentBGDark"
-        [ngClass]="{ 'active-link': activeSection === 'home' }"  (click)="scrollToSection('home')"  >Home</a
+        [ngClass]="{ 'active-link': activeSection === 'home' }"  (click)="scrollToSection('home')"  >home</a
       >
       <a
         [class.dark-navHeader]="isComponentBGDark"
         [class.white-navHeader]="!isComponentBGDark"
-        [ngClass]="{ 'active-link': activeSection === 'about' }" (click)="scrollToSection('about')" >About</a
+        [ngClass]="{ 'active-link': activeSection === 'about' }" (click)="scrollToSection('about')" >about</a
       >
       <a
         [class.dark-navHeader]="isComponentBGDark"
         [class.white-navHeader]="!isComponentBGDark"
-        [ngClass]="{ 'active-link': activeSection === 'projects' }" (click)="scrollToSection('projects')" >Projects</a
+        [ngClass]="{ 'active-link': activeSection === 'projects' }" (click)="scrollToSection('projects')" >projects</a
       >
-      <a
+      <!-- <a
         [class.dark-navHeader]="isComponentBGDark"
         [class.white-navHeader]="!isComponentBGDark"
         [ngClass]="{ 'active-link': activeSection === 'dissertation' }" (click)="scrollToSection('dissertation')" >Dissertation</a
-      >
+      > -->
+      <app-bb8-toggle class="bb8"></app-bb8-toggle>
     </div>
-    <app-bb8-toggle class="bb8"></app-bb8-toggle>
-    <app-mobile-toggle class="mobile-toggle"></app-mobile-toggle>
+    
+    <!-- <app-mobile-toggle class="mobile-toggle"></app-mobile-toggle> -->
   </div>
 </div>
