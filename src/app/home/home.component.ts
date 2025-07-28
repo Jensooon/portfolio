@@ -8,11 +8,13 @@ import { ExperienceComponent } from '../experience/experience.component';
 import { DissertationComponent } from '../dissertation/dissertation.component';
 import { AboutComponent } from '../about/about.component';
 import { ProjectsComponent } from '../projects/projects.component';
+import { TitleComponent } from './title/title.component';
+import { SolarSystemComponent } from './solar-system/solar-system.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ScrollRevealDirective, UserCardComponent, AboutComponent, ProjectsComponent, EducationComponent, ExperienceComponent, DissertationComponent],
+  imports: [ScrollRevealDirective, UserCardComponent,SolarSystemComponent, TitleComponent, AboutComponent, ProjectsComponent, EducationComponent, ExperienceComponent, DissertationComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

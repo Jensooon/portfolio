@@ -5,17 +5,15 @@
 }
 
 .profile-content {
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: auto auto;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  grid-template-areas:
-    "user-card headings"
-    "user-card headings";
+
 }
 
-
+h1{
+  font-size: 80px;
+}
 .headings {
   grid-area: headings;
   display: flex;

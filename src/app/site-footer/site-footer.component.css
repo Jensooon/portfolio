@@ -4,6 +4,18 @@
   justify-content: center;
 }
 
+.dark-class-footer {
+  background: #2e2e2e;
+  color: white;
+  height: 100%;
+}
+
+.white-class-footer {
+background: #e0dfdf;
+  color: black;
+  height: 100%;
+}
+
 /* Container needed to position the overlay. Adjust the width as needed */
 .container {
   position: relative;

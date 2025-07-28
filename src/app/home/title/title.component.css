@@ -1,0 +1,47 @@
+/*
+ * Use :host to ensure these styles are scoped to this component.
+ * This prevents them from leaking out and affecting other h1 tags
+ * in your application.
+ */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-weight: 10;
+  font-size: 4rem;
+  text-align: center;
+  /* Default text color */
+}
+
+/* The bounce animation remains the same */
+@keyframes bouncy-squeeze {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  40% {
+    transform: scale(0.6, 1.4);
+  }
+  60% {
+    transform: scale(1.2, 0.8);
+  }
+}
+
+/*
+ * The ::ng-deep pseudo-class might be necessary if you have
+ * ViewEncapsulation enabled (which is the default). It allows the
+ * styles to apply to the <span> elements we are adding dynamically.
+ */
+:host ::ng-deep h1 span {
+  display: inline-block;
+  transform-origin: center;
+
+  transition: color 0.3s;
+}
+
+/* The class that triggers the animation */
+:host ::ng-deep h1 span.is-animating {
+  animation: bouncy-squeeze 0.6s;
+}
