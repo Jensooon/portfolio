@@ -8,12 +8,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-
+  height: 85vh;
 }
 
-h1{
-  font-size: 80px;
-}
 .headings {
   grid-area: headings;
   display: flex;
@@ -31,7 +28,7 @@ h2 {
 a {
   font-size: 20px;
   font-weight: 500;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   text-align: center;
   text-decoration: none;
   color: inherit;

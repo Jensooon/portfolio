@@ -11,14 +11,30 @@
 
 h1 {
   font-weight: 10;
-  font-size: 4rem;
   text-align: center;
-  /* Default text color */
+  font-size: 50px;
+  /* This ensures long words can still wrap if they are
+     wider than the container, even with the smaller font size. */
+}
+/* Default text color */
+/* Tablet size (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+
+/* Mobile size (max-width: 767px) */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 25px;
+  }
 }
 
 /* The bounce animation remains the same */
 @keyframes bouncy-squeeze {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1, 1);
   }
   40% {
