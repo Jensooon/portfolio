@@ -67,6 +67,10 @@ a:hover {
   a {
     font-size: 12px;
   }
+
+  .profile-content {
+    flex-direction: column;
+  }
 }
 
 .dark-solar-system {
@@ -83,4 +87,5 @@ a:hover {
 
 .white-truck {
   display: block;
+  margin-left: 15px;
 }

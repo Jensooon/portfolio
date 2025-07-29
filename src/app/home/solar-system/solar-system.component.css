@@ -195,10 +195,3 @@
     transform: rotate(360deg);
   }
 }
-
-/* Mobile size (max-width: 767px) */
-@media (max-width: 767px) {
-  .solar-system-container {
-    display: none;
-  }
-}
