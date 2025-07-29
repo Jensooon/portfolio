@@ -1,6 +1,5 @@
 // home.component.ts
 
-// 1. Add HostListener, ElementRef, and Renderer2 to your Angular core imports
 import {
   Component,
   OnInit,
@@ -21,6 +20,7 @@ import { AboutComponent } from '../about/about.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { TitleComponent } from './title/title.component';
 import { SolarSystemComponent } from './solar-system/solar-system.component';
+import { TruckComponent } from './truck/truck.component';
 
 declare var FinisherHeader: any;
 
@@ -37,6 +37,7 @@ declare var FinisherHeader: any;
     EducationComponent,
     ExperienceComponent,
     DissertationComponent,
+    TruckComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
@@ -45,7 +46,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   isComponentBGDark: boolean = false;
   private themeSubscription?: Subscription;
 
-  // 2. Inject ElementRef and Renderer2 into the constructor
   constructor(
     private themeService: ThemeServiceService,
     private el: ElementRef,
@@ -57,6 +57,9 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
       .getGlobalDark()
       .subscribe((isDark) => {
         this.isComponentBGDark = isDark;
+        // Re-initialize the header AFTER Angular has updated the class
+        // The timeout ensures this runs after the DOM update.
+        setTimeout(() => this.initializeFinisherHeader(), 0);
       });
   }
 
@@ -67,40 +70,42 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // 4. Call the new private method here
     this.initializeFinisherHeader();
   }
 
-  // 3. Add this HostListener to re-run the logic on resize
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
     this.initializeFinisherHeader();
   }
 
   private initializeFinisherHeader(): void {
-    const headerEl = this.el.nativeElement.querySelector('.finisher-header');
+    // Target the main container div
+    const profileContentEl =
+      this.el.nativeElement.querySelector('.profile-content');
 
-    if (headerEl) {
-      // Find and remove any old canvas to prevent duplicates
-      const oldCanvas = headerEl.querySelector('canvas');
+    if (profileContentEl) {
+      // Always try to find and remove an old canvas to prevent duplicates
+      const oldCanvas = profileContentEl.querySelector('canvas');
       if (oldCanvas) {
-        this.renderer.removeChild(headerEl, oldCanvas);
+        this.renderer.removeChild(profileContentEl, oldCanvas);
       }
 
-      // Re-initialize the script with your configuration
-      new FinisherHeader({
-        count: 100,
-        size: { min: 2, max: 8, pulse: 0 },
-        speed: { x: { min: 0, max: 0.4 }, y: { min: 0, max: 0.6 } },
-        colors: {
-          background: '#373737',
-          particles: ['#fbfcca', '#d7f3fe', '#ffd0a7'],
-        },
-        blending: 'overlay',
-        opacity: { center: 1, edge: 0 },
-        skew: -2,
-        shapes: ['c'],
-      });
+      // ONLY create a new animation if the class is present (i.e., in dark mode)
+      if (profileContentEl.classList.contains('finisher-header')) {
+        new FinisherHeader({
+          count: 30,
+          size: { min: 2, max: 8, pulse: 0 },
+          speed: { x: { min: 0, max: 0.4 }, y: { min: 0, max: 0.6 } },
+          colors: {
+            background: '#373737',
+            particles: ['#fbfcca', '#d7f3fe', '#ffd0a7'],
+          },
+          blending: 'overlay',
+          opacity: { center: 1, edge: 0 },
+          skew: -2,
+          shapes: ['c'],
+        });
+      }
     }
   }
 }

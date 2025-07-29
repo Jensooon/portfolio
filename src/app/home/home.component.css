@@ -68,3 +68,19 @@ a:hover {
     font-size: 12px;
   }
 }
+
+.dark-solar-system {
+  display: block;
+}
+
+.white-solar-system {
+  display: none;
+}
+
+.dark-truck {
+  display: none;
+}
+
+.white-truck {
+  display: block;
+}

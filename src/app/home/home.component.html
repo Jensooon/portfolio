@@ -1,8 +1,20 @@
 <section appScrollReveal id="home">
-  <!-- <h1>Hi, I'm Jenson</h1> -->
-  <div class="profile-content finisher-header">
+  <div
+    class="profile-content"
+    [class.finisher-header]="isComponentBGDark"
+    [class.white-class-footer]="!isComponentBGDark"
+  >
     <app-title class="title"></app-title>
-    <app-solar-system class="solar-system"></app-solar-system>
+
+    <app-solar-system
+      [class.dark-solar-system]="isComponentBGDark"
+      [class.white-solar-system]="!isComponentBGDark"
+    ></app-solar-system>
+
+    <app-truck
+      [class.dark-truck]="isComponentBGDark"
+      [class.white-truck]="!isComponentBGDark"
+    ></app-truck>
   </div>
 
   <!-- <h1 class="sub-title">What are my interests?</h1>
