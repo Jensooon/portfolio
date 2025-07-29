@@ -1,14 +1,28 @@
-.wrapper {
+.home-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+#home {
+  margin: 0;
+  max-width: none;
+}
+/* This is your existing rule, which is now correct */
 .profile-content {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
+
   height: 85vh;
+  width: 100%;
+  position: relative;
+}
+
+/* This targets the components inside .profile-content */
+.profile-content > * {
+  position: relative;
+  z-index: 1;
 }
 
 .headings {

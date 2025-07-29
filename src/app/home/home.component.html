@@ -1,18 +1,11 @@
-<div
-  class="wrapper"
-  [class.dark-class]="isComponentBGDark"
-  [class.white-class]="!isComponentBGDark"
->
+<section appScrollReveal id="home">
+  <!-- <h1>Hi, I'm Jenson</h1> -->
+  <div class="profile-content finisher-header">
+    <app-title class="title"></app-title>
+    <app-solar-system class="solar-system"></app-solar-system>
+  </div>
 
-  <section appScrollReveal id="home">
-
-<!-- <h1>Hi, I'm Jenson</h1> -->
-    <div class="profile-content">
-          <app-title class="title"></app-title>
-          <app-solar-system class="solar-system"></app-solar-system>
-    </div>
-
-    <!-- <h1 class="sub-title">What are my interests?</h1>
+  <!-- <h1 class="sub-title">What are my interests?</h1>
     <div class="four-by-four">
       <p>🖥️ Software Engineering</p>
       <p>🤖 AI & Machine Learning</p>
@@ -31,10 +24,12 @@
     <a href="https://github.com/Jensooon/UsefulAutoHotkeyScripts"
       >- Improve prodcutivity using these useful autohotkey scripts.</a
     > -->
-  </section>
-  
-
-
+</section>
+<div
+  class="home-wrapper"
+  [class.dark-class]="isComponentBGDark"
+  [class.white-class]="!isComponentBGDark"
+>
   <section appScrollReveal id="about">
     <app-about></app-about>
   </section>
@@ -46,7 +41,6 @@
   <section appScrollReveal id="dissertation">
     <app-dissertation></app-dissertation>
   </section>
-
 
   <!-- 
   <section appScrollReveal>

@@ -23,7 +23,7 @@
               "node_modules/devicon/devicon.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["src/assets/js/finisher-header.es5.min.js"]
           },
           "configurations": {
             "production": {
@@ -80,7 +80,7 @@
               "node_modules/devicon/devicon.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["src/assets/js/finisher-header.es5.min.js"]
           }
         }
       }
