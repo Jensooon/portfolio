@@ -3,19 +3,16 @@ import { Subscription } from 'rxjs';
 import { ThemeServiceService } from '../theme-service.service';
 import { ScrollRevealDirective } from '../scroll-reveal.directive';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { TitleComponent } from '../about/title/title.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [ScrollRevealDirective, FontAwesomeModule],
+  imports: [ScrollRevealDirective, TitleComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })
 export class AboutComponent {
-  faChevronRight = faChevronRight; // Font Awesome Icon
-
   isComponentBGDark: boolean = false;
   private themeSubscription?: Subscription;
 

@@ -1,146 +1,145 @@
-.wrap {
+/* --- Main Grid Container --- */
+.about-grid {
+  display: grid;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 1rem 2rem;
+  align-items: start;
+  grid-template-columns: 1fr 2fr;
+
+  /* Change "image" to "profile" to match our new container */
+  grid-template-areas:
+    "title title"
+    "profile text";
+}
+
+/* --- New Rules for the Left Column --- */
+
+/* This rule styles the new container for the image and contacts */
+.profile-container {
+  grid-area: profile; /* Assign it to the "profile" grid area */
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center them horizontally */
+  gap: 1.5rem; /* Space between the image and the contact icons */
 }
-.wrapper {
+
+/* You can remove the large bottom margin from your old rule */
+.contact-details {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-  margin-bottom: 5%;
+  /* margin-bottom: 3rem;  <-- REMOVE THIS LINE */
 }
 
-.y4-container {
+/* --- Assign elements to their grid areas --- */
+
+.title {
+  grid-area: title;
+}
+
+.profile-image {
+  grid-area: image;
+  align-self: start; /* Aligns image to the top of its grid cell */
+}
+
+.about-text {
+  grid-area: text;
+}
+
+/* Optional: remove default margin from paragraphs */
+.about-text p {
+  margin-top: 0;
+  font-size: 0.95rem; /* A bit smaller than the default (1rem). Adjust as needed. */
+  line-height: 1.6; /* Improves readability with smaller text */
+}
+
+.contact-container {
+  position: relative;
+  width: 3.5rem;
+  height: 3.5rem;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  margin-top: -5%;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  border-radius: 10%;
+  overflow: hidden;
+  margin: 0.6rem;
 }
 
-.y3-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: -3%;
+.contact-container i {
+  color: var(--unfocussed-col);
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 
-a {
-  font-size: 20px;
-  font-weight: 500;
-  font-family: 'JetBrains Mono', monospace;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-}
-.center-text {
-  text-align: center;
-  margin-top: -1%;
+.contact-container:hover:before {
+  background-position: 100% 100%;
+  opacity: 1;
+  /* Make the background visible on hover */
 }
 
-a:visited {
-  color: inherit;
-}
-a:hover {
-  color: #5cadd2;
+.contact-container:hover i {
+  color: var(--text-col);
 }
 
-.dark-loader {
-  width: 28px;
-  height: 28px;
-  border: 4px solid red;
-  border-bottom-color: transparent;
-  border-radius: 50%;
+.fa-phone,
+.fa-envelope,
+.fa-github,
+.fa-file-lines,
+.fa-linkedin {
   display: inline-block;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-  margin-right: 2%;
+  vertical-align: top;
+  font-size: 1.75rem;
 }
 
-.light-loader {
-  width: 28px;
-  height: 28px;
-  border: 4px solid green;
-  border-bottom-color: transparent;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-  margin-right: 2%;
+.fa-palette {
+  margin-left: 0.75rem;
 }
 
-h4 {
-  margin-top: -1%;
-}
-
-.chevron {
-  margin-left: 5px;
-  margin-top: 5px;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
+/* --- Responsive styles for smaller screens (e.g., mobile) --- */
+@media (max-width: 768px) {
+  .about-grid {
+    /* Switch to a single-column layout */
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "image"
+      "text";
   }
-  100% {
-    transform: rotate(360deg);
+
+  .profile-image {
+    justify-self: center; /* Center the image in the single column */
+    max-width: 280px; /* Optional: control image size on mobile */
   }
 }
 
-/* Tablet size (768px to 1024px) */
+.profile-image {
+  /* --- Base Styles (Mobile) --- */
+  display: block;
+  width: 90%; /* Use 90% of the container's width on small screens */
+  max-width: 250px; /* But don't let it get bigger than 280px */
+  height: auto; /* This is key to maintain the aspect ratio */
+  margin: 2rem auto; /* Adds space top/bottom and centers it horizontally */
+  border-radius: 15px; /* Adjust this value for more/less rounded corners */
+  object-fit: cover; /* Ensures the image fills the space without distortion */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Optional: adds a subtle shadow for depth */
+}
+
+/* --- Tablet Styles --- */
 @media (min-width: 768px) and (max-width: 1024px) {
-  a {
-    font-size: 13px;
-  }
-  .light-loader {
-    width: 23px;
-    height: 23px;
-    border: 3px solid green;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    margin-right: 2%;
-  }
-  .dark-loader {
-    width: 23px;
-    height: 23px;
-    border: 3px solid red;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    margin-right: 2%;
+  .profile-image {
+    max-width: 150px; /* Allow the image to be larger on tablets */
   }
 }
 
-/* Mobile size (max-width: 767px) */
+/* --- Mobile Styles --- */
 @media (max-width: 767px) {
-  a {
-    font-size: 12px;
-  }
-  .light-loader {
-    width: 18px;
-    height: 18px;
-    border: 2px solid green;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    margin-right: 2%;
-  }
-  .dark-loader {
-    width: 18px;
-    height: 18px;
-    border: 2px solid red;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    margin-right: 2%;
+  .profile-image {
+    max-width: 100px; /* A larger size for desktops */
   }
 }

@@ -1,10 +1,45 @@
-<div
-  class="wrap"
-  [class.dark-class]="isComponentBGDark"
-  [class.white-class]="!isComponentBGDark"
->
-  <section>
-    <h1 class="sub-title" appScrollReveal>🛁University of Bath</h1>
+<div class="about-grid">
+  <app-title class="title"></app-title>
+
+  <div class="profile-container">
+    <img
+      class="profile-image"
+      src="assets/profile-image.jpg"
+      alt="Profile Image"
+    />
+    <div class="contact-container">
+      <a href="https://www.linkedin.com/in/">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+    <div class="contact-container">
+      <a href="mailto:com">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    <div class="contact-container">
+      <a href="https://">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="about-text">
+    <p>
+      I have recently completed my BSc (Hons) in Computer Science and
+      Mathematics with a Year in Industry at the
+      <strong>University of Bath</strong> 🛁, achieving a First Class Honours
+      degree.
+    </p>
+    <p>
+      I am passionate about software engineering, AI, and mathematics. In
+      particular, I am interested in the intersection of AI and music and the
+      exciting opportunities within this field. In my free time, I love playing
+      guitar, staying active, and exploring new technologies.
+    </p>
+  </div>
+</div>
+<!-- <h1 class="sub-title" appScrollReveal>🛁University of Bath</h1>
     <h5 class="center-text" appScrollReveal>
       🖥️ Computer Science and 📐 Mathematics <br />
       BSc (Hons) with Industrial Experience
@@ -92,6 +127,4 @@
       <a href="https://www.bath.ac.uk/catalogues/2022-2023/ma/MA10210.html"
         >Algebra 1B</a
       >
-    </div>
-  </section>
-</div>
+    </div>-->
