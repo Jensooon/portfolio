@@ -1,6 +1,6 @@
 /* =============================================
-   Main Layout Grid
-   ============================================= */
+    Main Layout Grid
+    ============================================= */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -15,8 +15,8 @@
 }
 
 /* =============================================
-   Grid Area Assignments
-   ============================================= */
+    Grid Area Assignments
+    ============================================= */
 .title {
   grid-area: title;
 }
@@ -26,21 +26,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.5rem;
 }
 
 .about-text {
   grid-area: text;
+  display: grid;
+  place-items: center;
+  min-height: 250px;
 }
 
 /* =============================================
-   Components & Elements
-   ============================================= */
+    Components & Elements
+    ============================================= */
 /* --- Profile Image --- */
 .profile-image {
   display: block;
   width: 100%;
-  max-width: 250px; /* Default max-width for desktop */
+  max-width: 250px;
   height: auto;
   border-radius: 15px;
   object-fit: cover;
@@ -50,11 +53,12 @@
 /* --- About Text Paragraphs --- */
 .about-text p {
   margin-top: 0;
-  font-size: 0.98rem;
+  font-size: clamp(0.9rem, 1.5vw + 0.5rem, 1.1rem);
   line-height: 1.6;
+  text-align: center;
+  max-width: 50ch;
 }
 
-/* --- Contact Icons --- */
 /* --- Contact Icons --- */
 .contact-details {
   display: flex;
@@ -62,24 +66,21 @@
   align-items: center;
 }
 
-/* 1. SHARED STYLES for both containers */
-/* These properties are the same for both light and dark mode */
 .white-contact-container,
 .dark-contact-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  margin: 0.6rem;
+  width: clamp(2.75rem, 6vw, 3.5rem);
+  height: clamp(2.75rem, 6vw, 3.5rem);
+  margin: 0.5rem;
   border-radius: 10%;
   overflow: hidden;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-/* Shared styles for the link and icon elements */
 .white-contact-container a,
 .dark-contact-container a {
   display: flex;
@@ -94,39 +95,52 @@
 .dark-contact-container a i {
   position: relative;
   z-index: 2;
-  font-size: 1.75rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   transition: color 0.3s ease;
 }
 
+/* Light/Dark mode colors */
 .white-contact-container a i {
-  color: #000000; /* Black icon */
+  color: #000000;
 }
-
 .white-contact-container:hover a i {
-  color: #808080; /* Grey icon on hover */
+  color: #808080;
 }
-
 .dark-contact-container a i {
-  color: #ffffff; /* White icon */
+  color: #ffffff;
 }
-
 .dark-contact-container:hover a i {
-  color: #bbbbbb; /* Light grey icon on hover */
+  color: #bbbbbb;
 }
 
 /* =============================================
-   Responsive Styles (Mobile-first approach)
-   ============================================= */
-@media (max-width: 768px) {
+    Media Queries (for layout)
+    ============================================= */
+/* --- Tablet Styles --- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .profile-image {
+    max-width: 200px;
+  }
+}
+
+/* --- Mobile Styles --- */
+@media (max-width: 767px) {
+  /* MODIFIED: Stacks and re-orders the grid for mobile */
   .about-grid {
     grid-template-columns: 1fr; /* Switch to a single column */
     grid-template-areas:
-      "title"
-      "profile" /* The profile container (image + icons) stacks neatly */
-      "text";
+      "title" /* 1. Title */
+      "text" /* 2. Text Area */
+      "profile"; /* 3. Profile (Image/Icons) */
+    gap: 1.5rem; /* Adjust gap for vertical stacking */
+  }
+
+  /* MODIFIED: Allows the text container to size naturally */
+  .about-text {
+    min-height: auto;
   }
 
   .profile-image {
-    max-width: 280px; /* Larger image on mobile where it has more space */
+    max-width: 180px;
   }
 }
