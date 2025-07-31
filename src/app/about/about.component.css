@@ -1,145 +1,132 @@
-/* --- Main Grid Container --- */
+/* =============================================
+   Main Layout Grid
+   ============================================= */
 .about-grid {
   display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "title   title"
+    "profile text";
+  align-items: start;
+  gap: 1rem 2rem;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  gap: 1rem 2rem;
-  align-items: start;
-  grid-template-columns: 1fr 2fr;
-
-  /* Change "image" to "profile" to match our new container */
-  grid-template-areas:
-    "title title"
-    "profile text";
 }
 
-/* --- New Rules for the Left Column --- */
-
-/* This rule styles the new container for the image and contacts */
-.profile-container {
-  grid-area: profile; /* Assign it to the "profile" grid area */
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center them horizontally */
-  gap: 1.5rem; /* Space between the image and the contact icons */
-}
-
-/* You can remove the large bottom margin from your old rule */
-.contact-details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* margin-bottom: 3rem;  <-- REMOVE THIS LINE */
-}
-
-/* --- Assign elements to their grid areas --- */
-
+/* =============================================
+   Grid Area Assignments
+   ============================================= */
 .title {
   grid-area: title;
 }
 
-.profile-image {
-  grid-area: image;
-  align-self: start; /* Aligns image to the top of its grid cell */
+.profile-container {
+  grid-area: profile;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .about-text {
   grid-area: text;
 }
 
-/* Optional: remove default margin from paragraphs */
-.about-text p {
-  margin-top: 0;
-  font-size: 0.95rem; /* A bit smaller than the default (1rem). Adjust as needed. */
-  line-height: 1.6; /* Improves readability with smaller text */
+/* =============================================
+   Components & Elements
+   ============================================= */
+/* --- Profile Image --- */
+.profile-image {
+  display: block;
+  width: 100%;
+  max-width: 250px; /* Default max-width for desktop */
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.contact-container {
-  position: relative;
-  width: 3.5rem;
-  height: 3.5rem;
+/* --- About Text Paragraphs --- */
+.about-text p {
+  margin-top: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* --- Contact Icons --- */
+/* --- Contact Icons --- */
+.contact-details {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
-  cursor: pointer;
-  outline: none;
+}
+
+/* 1. SHARED STYLES for both containers */
+/* These properties are the same for both light and dark mode */
+.white-contact-container,
+.dark-contact-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0.6rem;
   border-radius: 10%;
   overflow: hidden;
-  margin: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.contact-container i {
-  color: var(--unfocussed-col);
-  transition: color 0.3s ease;
+/* Shared styles for the link and icon elements */
+.white-contact-container a,
+.dark-contact-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.white-contact-container a i,
+.dark-contact-container a i {
   position: relative;
   z-index: 2;
-}
-
-.contact-container:hover:before {
-  background-position: 100% 100%;
-  opacity: 1;
-  /* Make the background visible on hover */
-}
-
-.contact-container:hover i {
-  color: var(--text-col);
-}
-
-.fa-phone,
-.fa-envelope,
-.fa-github,
-.fa-file-lines,
-.fa-linkedin {
-  display: inline-block;
-  vertical-align: top;
   font-size: 1.75rem;
+  transition: color 0.3s ease;
 }
 
-.fa-palette {
-  margin-left: 0.75rem;
+.white-contact-container a i {
+  color: #000000; /* Black icon */
 }
 
-/* --- Responsive styles for smaller screens (e.g., mobile) --- */
+.white-contact-container:hover a i {
+  color: #808080; /* Grey icon on hover */
+}
+
+.dark-contact-container a i {
+  color: #ffffff; /* White icon */
+}
+
+.dark-contact-container:hover a i {
+  color: #bbbbbb; /* Light grey icon on hover */
+}
+
+/* =============================================
+   Responsive Styles (Mobile-first approach)
+   ============================================= */
 @media (max-width: 768px) {
   .about-grid {
-    /* Switch to a single-column layout */
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Switch to a single column */
     grid-template-areas:
       "title"
-      "image"
+      "profile" /* The profile container (image + icons) stacks neatly */
       "text";
   }
 
   .profile-image {
-    justify-self: center; /* Center the image in the single column */
-    max-width: 280px; /* Optional: control image size on mobile */
-  }
-}
-
-.profile-image {
-  /* --- Base Styles (Mobile) --- */
-  display: block;
-  width: 90%; /* Use 90% of the container's width on small screens */
-  max-width: 250px; /* But don't let it get bigger than 280px */
-  height: auto; /* This is key to maintain the aspect ratio */
-  margin: 2rem auto; /* Adds space top/bottom and centers it horizontally */
-  border-radius: 15px; /* Adjust this value for more/less rounded corners */
-  object-fit: cover; /* Ensures the image fills the space without distortion */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Optional: adds a subtle shadow for depth */
-}
-
-/* --- Tablet Styles --- */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .profile-image {
-    max-width: 150px; /* Allow the image to be larger on tablets */
-  }
-}
-
-/* --- Mobile Styles --- */
-@media (max-width: 767px) {
-  .profile-image {
-    max-width: 100px; /* A larger size for desktops */
+    max-width: 280px; /* Larger image on mobile where it has more space */
   }
 }
