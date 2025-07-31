@@ -1,12 +1,19 @@
-.wrapper {
+/*
+ * The :host pseudo-class selects the component's host element
+ * (e.g., <app-root>). We'll make it our main flex container.
+*/
+:host {
   display: flex;
   flex-direction: column;
-  /* height: 100%; */
-  width: 100%;
-  min-height: 100%;
+  min-height: 100vh; /* Ensures the component fills the screen's height */
 }
 
 .middle {
-  padding-top: 70px; /* Adjust as needed */
-  flex-grow: 1; /* Ensure the middle element grows to fill available space */
+  flex: 1; /* This is a shorthand for flex-grow: 1, which makes it expand */
+  padding-top: 70px;
+}
+
+.footer {
+  /* You can add footer-specific styles here if needed */
+  width: 100%;
 }

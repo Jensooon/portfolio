@@ -1,17 +1,17 @@
-.wrapper {
+.dark-class-footer {
   display: flex;
   height: 100%;
   justify-content: center;
-}
-
-.dark-class-footer {
   background: #2e2e2e;
   color: white;
   height: 100%;
 }
 
 .white-class-footer {
-background: #e0dfdf;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  background: #e0dfdf;
   color: black;
   height: 100%;
 }
@@ -43,7 +43,7 @@ background: #e0dfdf;
   opacity: 0;
   color: white;
   font-size: 12px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   text-align: center;
 }
 
