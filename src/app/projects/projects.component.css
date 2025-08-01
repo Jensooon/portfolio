@@ -3,12 +3,11 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  padding: 2rem;
 }
 
 .card {
-  width: 500px;
-  height: 100px;
+  width: 600px;
+  height: 60px;
   border-radius: 20px;
   background: #efeeee;
   position: relative;
@@ -61,4 +60,42 @@
 .card:hover .card-button {
   transform: translate(-50%, 50%);
   opacity: 1;
+}
+
+/* Tablet size (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .card {
+    width: 400px;
+    height: 20px;
+  }
+  .card-button {
+    height: 40%;
+  }
+  .text-body {
+  }
+
+  /*Text*/
+  .text-title {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+}
+
+/* Mobile size (max-width: 767px) */
+@media (max-width: 767px) {
+  .card {
+    width: 200px;
+    height: 15px;
+  }
+  .card-button {
+    height: 40%;
+    font-size: x-small;
+  }
+  .text-body {
+  }
+
+  /*Text*/
+  .text-title {
+    font-size: 1em;
+  }
 }
