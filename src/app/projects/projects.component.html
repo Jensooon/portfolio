@@ -4,27 +4,54 @@
     Some projects I have worked on during my studies or in my free time. For
     further details on a particular project please check out the github page!
   </p>
-  <div appScrollReveal class="card">
+  <div
+    appScrollReveal
+    [class.dark-card]="isComponentBGDark"
+    [class.white-card]="!isComponentBGDark"
+  >
     <div class="card-details">
       <p class="text-title">Test 1</p>
       <p class="text-body">Here are the details of the card</p>
     </div>
-    <button class="card-button">Check this out on Github</button>
+    <button
+      [class.dark-card-button]="isComponentBGDark"
+      [class.white-card-button]="!isComponentBGDark"
+    >
+      Check this out on Github
+    </button>
   </div>
 
-  <div appScrollReveal class="card">
+  <div
+    appScrollReveal
+    [class.dark-card]="isComponentBGDark"
+    [class.white-card]="!isComponentBGDark"
+  >
     <div class="card-details">
-      <p class="text-title">Test 2</p>
+      <p class="text-title">Test 1</p>
       <p class="text-body">Here are the details of the card</p>
     </div>
-    <button class="card-button">Check this out on GitHub</button>
+    <button
+      [class.dark-card-button]="isComponentBGDark"
+      [class.white-card-button]="!isComponentBGDark"
+    >
+      Check this out on Github
+    </button>
   </div>
 
-  <div appScrollReveal class="card">
+  <div
+    appScrollReveal
+    [class.dark-card]="isComponentBGDark"
+    [class.white-card]="!isComponentBGDark"
+  >
     <div class="card-details">
-      <p class="text-title">Test 3</p>
+      <p class="text-title">Test 1</p>
       <p class="text-body">Here are the details of the card</p>
     </div>
-    <button class="card-button">Check this out on Github</button>
+    <button
+      [class.dark-card-button]="isComponentBGDark"
+      [class.white-card-button]="!isComponentBGDark"
+    >
+      Check this out on Github
+    </button>
   </div>
 </div>

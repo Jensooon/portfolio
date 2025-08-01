@@ -5,32 +5,43 @@
   gap: 2rem;
 }
 
-.card {
+.dark-card,
+.white-card {
   width: 600px;
   height: 60px;
   border-radius: 20px;
-  background: #efeeee;
+
   position: relative;
   padding: 1.8rem;
-  border: 2px solid #c3c6ce;
+
   transition: 0.5s ease-out;
   overflow: visible;
 }
 
+.white-card {
+  background: #efeeee;
+  border: 2px solid #c3c6ce;
+}
+
+.dark-card {
+  background: #373737;
+  border: 2px solid #2d2d2d;
+}
+
 .card-details {
-  color: black;
   height: 100%;
-  gap: 0.5em;
+
   display: grid;
   place-content: center;
 }
 
-.card-button {
+.dark-card-button,
+.white-card-button {
   transform: translate(-50%, 125%);
   width: 60%;
   border-radius: 1rem;
   border: none;
-  background-color: green;
+
   color: #fff;
   font-size: 1rem;
   padding: 0.5rem 1rem;
@@ -41,6 +52,13 @@
   transition: 0.3s ease-out;
 }
 
+.dark-card-button {
+  background-color: red;
+}
+.white-card-button {
+  background-color: green;
+}
+
 .text-body {
   color: rgb(134, 134, 134);
 }
@@ -49,26 +67,37 @@
 .text-title {
   font-size: 1.5em;
   font-weight: bold;
+  margin: 10px 0 0 0;
 }
-
 /*Hover*/
-.card:hover {
+.white-card:hover {
   border-color: green;
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
 
-.card:hover .card-button {
+.dark-card:hover {
+  border-color: red;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.white-card:hover .white-card-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
+.dark-card:hover .dark-card-button {
   transform: translate(-50%, 50%);
   opacity: 1;
 }
 
 /* Tablet size (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .card {
+  .white-card,
+  .dark-card {
     width: 400px;
     height: 20px;
   }
-  .card-button {
+  .white-card-button,
+  .dark-card-button {
     height: 40%;
   }
   .text-body {
@@ -83,11 +112,13 @@
 
 /* Mobile size (max-width: 767px) */
 @media (max-width: 767px) {
-  .card {
+  .white-card,
+  .dark-card {
     width: 200px;
     height: 15px;
   }
-  .card-button {
+  .white-card-button,
+  .dark-card-button {
     height: 40%;
     font-size: x-small;
   }
