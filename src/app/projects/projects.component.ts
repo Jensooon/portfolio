@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { ThemeServiceService } from '../theme-service.service';
 import { Subscription } from 'rxjs';
 import { ScrollRevealDirective } from '../scroll-reveal.directive';
+import { TitleComponent } from '../projects/title/title.component';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [ScrollRevealDirective],
+  imports: [ScrollRevealDirective, TitleComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
 })
