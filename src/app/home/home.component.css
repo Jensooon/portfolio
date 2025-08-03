@@ -8,6 +8,10 @@
   margin: 0;
   max-width: none;
 }
+#projects {
+  margin: 0 0 3rem 0;
+}
+
 /* This is your existing rule, which is now correct */
 .profile-content {
   display: flex;

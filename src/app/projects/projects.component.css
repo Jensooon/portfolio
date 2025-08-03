@@ -67,11 +67,12 @@
   color: rgb(134, 134, 134);
   /* --- Added this line to animate the movement --- */
   transition: transform 0.3s ease-out;
+  font-size: 1em;
 }
 
 /*Text*/
 .text-title {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
   margin: 10px 0 0 0;
 }
@@ -111,13 +112,15 @@
   .white-card-button,
   .dark-card-button {
     height: 15%;
+    font-size: 0.8rem;
   }
   .text-body {
+    font-size: 0.6em;
   }
 
   /*Text*/
   .text-title {
-    font-size: 1.2em;
+    font-size: 0.8em;
     font-weight: bold;
   }
 }
@@ -132,13 +135,14 @@
   .white-card-button,
   .dark-card-button {
     height: 10%;
-    font-size: x-small;
+    font-size: 0.7rem;
   }
   .text-body {
+    font-size: 0.5em;
   }
 
   /*Text*/
   .text-title {
-    font-size: 1em;
+    font-size: 0.7em;
   }
 }
