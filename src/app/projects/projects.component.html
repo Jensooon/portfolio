@@ -1,6 +1,6 @@
 <div class="projects-wrapper">
   <app-title></app-title>
-  <p>
+  <p class="projects-description">
     Some projects I have worked on during my studies or in my free time. For
     further details on a particular project please check out the github page!
   </p>
@@ -13,12 +13,16 @@
       <p class="text-title">Test 1</p>
       <p class="text-body">Here are the details of the card</p>
     </div>
-    <button
+
+    <a
+      href="https://github.com/your-username/your-repo"
+      target="_blank"
+      rel="noopener noreferrer"
       [class.dark-card-button]="isComponentBGDark"
       [class.white-card-button]="!isComponentBGDark"
     >
       Check this out on Github
-    </button>
+    </a>
   </div>
 
   <div
@@ -30,14 +34,17 @@
       <p class="text-title">Test 1</p>
       <p class="text-body">Here are the details of the card</p>
     </div>
-    <button
+
+    <a
+      href="https://github.com/your-username/your-repo"
+      target="_blank"
+      rel="noopener noreferrer"
       [class.dark-card-button]="isComponentBGDark"
       [class.white-card-button]="!isComponentBGDark"
     >
       Check this out on Github
-    </button>
+    </a>
   </div>
-
   <div
     appScrollReveal
     [class.dark-card]="isComponentBGDark"
@@ -47,11 +54,15 @@
       <p class="text-title">Test 1</p>
       <p class="text-body">Here are the details of the card</p>
     </div>
-    <button
+
+    <a
+      href="https://github.com/your-username/your-repo"
+      target="_blank"
+      rel="noopener noreferrer"
       [class.dark-card-button]="isComponentBGDark"
       [class.white-card-button]="!isComponentBGDark"
     >
       Check this out on Github
-    </button>
+    </a>
   </div>
 </div>
