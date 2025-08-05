@@ -21,6 +21,7 @@ import { ProjectsComponent } from '../projects/projects.component';
 import { TitleComponent } from './title/title.component';
 import { SolarSystemComponent } from './solar-system/solar-system.component';
 import { TruckComponent } from './truck/truck.component';
+import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 
 declare var FinisherHeader: any;
 
@@ -38,6 +39,7 @@ declare var FinisherHeader: any;
     ExperienceComponent,
     DissertationComponent,
     TruckComponent,
+    LottieComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
@@ -51,6 +53,10 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     private el: ElementRef,
     private renderer: Renderer2
   ) {}
+
+  options: AnimationOptions = {
+    path: '/assets/lottie/Audio Wave.json',
+  };
 
   ngOnInit() {
     this.themeSubscription = this.themeService
