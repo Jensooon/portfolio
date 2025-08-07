@@ -10,10 +10,17 @@
   padding: 0 1rem 0 1rem;
 }
 
+.projects-grid {
+  display: grid;
+  /* This creates two columns of equal width. */
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+}
+
 .dark-card,
 .white-card {
-  width: 600px;
-  height: 60px;
+  width: 200px;
+  height: 150px;
   border-radius: 12px;
   position: relative;
   padding: 1.8rem;
@@ -102,6 +109,49 @@
 .dark-card:hover .text-body,
 .white-card:hover .text-body {
   transform: translateY(-5px);
+}
+
+.active-red-rocker {
+  display: block;
+}
+.inactive-red-rocker {
+  display: none;
+}
+.active-green-rocker {
+  display: block;
+}
+.inactive-green-rocker {
+  display: none;
+}
+
+.active-red-pong {
+  margin: -10%;
+  display: block;
+}
+.inactive-red-pong {
+  display: none;
+}
+.active-green-pong {
+  margin: -10%;
+  display: block;
+}
+.inactive-green-pong {
+  display: none;
+}
+
+.active-red-devCode {
+  margin: -10%;
+  display: block;
+}
+.inactive-red-devCode {
+  display: none;
+}
+.active-green-devCode {
+  margin: -10%;
+  display: block;
+}
+.inactive-green-devCode {
+  display: none;
 }
 
 /* Tablet size (768px to 1024px) */

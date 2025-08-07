@@ -54,8 +54,12 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     private renderer: Renderer2
   ) {}
 
-  options: AnimationOptions = {
-    path: '/assets/lottie/Audio Wave.json',
+  waveRedoptions: AnimationOptions = {
+    path: '/assets/lottie/wave red lines.json',
+  };
+
+  waveGreenoptions: AnimationOptions = {
+    path: '/assets/lottie/wave green lines.json',
   };
 
   ngOnInit() {

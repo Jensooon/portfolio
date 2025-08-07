@@ -59,6 +59,20 @@ a:hover {
   color: #5cadd2;
 }
 
+.active-red-waves {
+  display: block;
+}
+.inactive-red-waves {
+  display: none;
+}
+
+.active-green-waves {
+  display: block;
+}
+.inactive-green-waves {
+  display: none;
+}
+
 /* Tablet size (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   a {

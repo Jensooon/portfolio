@@ -47,27 +47,22 @@
     <app-about></app-about>
   </section>
 
-  <ng-lottie [options]="options" width="300px" height="300px"></ng-lottie>
+  <ng-lottie
+    [class.active-red-waves]="isComponentBGDark"
+    [class.inactive-red-waves]="!isComponentBGDark"
+    [options]="waveRedoptions"
+    width="30vw"
+    height="30vh"
+  ></ng-lottie>
+  <ng-lottie
+    [class.inactive-green-waves]="isComponentBGDark"
+    [class.active-green-waves]="!isComponentBGDark"
+    [options]="waveGreenoptions"
+    width="30vw"
+    height="30vh"
+  ></ng-lottie>
 
   <section id="projects">
     <app-projects></app-projects>
   </section>
-
-  <!-- <section appScrollReveal id="dissertation">
-    <app-dissertation></app-dissertation>
-  </section> -->
-
-  <!-- 
-  <section appScrollReveal>
-    <h1 class="sub-title">Skills</h1>
-    <p>
-      - Explore Azure AI capabilities in a website. Describe images, translate
-      text, detect characters in images and much more!
-    </p>
-    <p>
-      - Track dates, plan events in this WPF Calendar Application. Built with
-      MVVM and Prism.
-    </p>
-    <p>Full stack development in Delphi</p>
-  </section> -->
 </div>
