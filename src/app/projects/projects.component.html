@@ -5,126 +5,119 @@
     further details on a particular project please check out the github page!
   </p>
 
-  <div class="projects-grid">
-    <div
-      appScrollReveal
-      [class.dark-card]="isComponentBGDark"
-      [class.white-card]="!isComponentBGDark"
-    >
-      <div class="card-details">
-        <p class="text-title">Azure AI Capability Website</p>
-        <p class="text-body">
-          Describe images, translate text, detect characters and more using
-          Azure's AI services.
-        </p>
-      </div>
-
-      <a
-        href="https://github.com/Jensooon/AzureAiWebsiteJW"
-        target="_blank"
-        rel="noopener noreferrer"
-        [class.dark-card-button]="isComponentBGDark"
-        [class.white-card-button]="!isComponentBGDark"
+  <div
+    appScrollReveal
+    [class.dark-card]="isComponentBGDark"
+    [class.white-card]="!isComponentBGDark"
+  >
+    <div class="card-details">
+      <p class="text-title">Azure AI Capability Website</p>
+      <p
+        [class.dark-text-body]="isComponentBGDark"
+        [class.white-text-body]="!isComponentBGDark"
       >
-        Check this out on Github!
-      </a>
+        Describe images, translate text, detect characters and more using
+        Azure's AI services.
+      </p>
     </div>
 
-    <ng-lottie
-      [class.active-red-rocker]="isComponentBGDark"
-      [class.inactive-red-rocker]="!isComponentBGDark"
-      [options]="rockerRedOptions"
-      width="250px"
-      height="250px"
-    ></ng-lottie>
-    <ng-lottie
-      [class.inactive-green-rocker]="isComponentBGDark"
-      [class.active-green-rocker]="!isComponentBGDark"
-      [options]="rockerGreenOptions"
-      width="250px"
-      height="250px"
-    ></ng-lottie>
-
-    <ng-lottie
-      [class.active-red-devCode]="isComponentBGDark"
-      [class.inactive-red-devCode]="!isComponentBGDark"
-      [options]="devCodeRedOptions"
-      width="350px"
-      height="350px"
-    ></ng-lottie>
-
-    <ng-lottie
-      [class.inactive-green-devCode]="isComponentBGDark"
-      [class.active-green-devCode]="!isComponentBGDark"
-      [options]="devCodeGreenOptions"
-      width="350px"
-      height="350px"
-    ></ng-lottie>
-
-    <div
-      appScrollReveal
-      [class.dark-card]="isComponentBGDark"
-      [class.white-card]="!isComponentBGDark"
+    <a
+      href="https://github.com/Jensooon/AzureAiWebsiteJW"
+      target="_blank"
+      rel="noopener noreferrer"
+      [class.dark-card-button]="isComponentBGDark"
+      [class.white-card-button]="!isComponentBGDark"
     >
-      <div class="card-details">
-        <p class="text-title">
-          Improving the Robustness of Music Deepfake Detection
-        </p>
-        <p class="text-body">
-          See the work behind my university dissertation on music deepfake
-          detection.
-        </p>
-      </div>
-
-      <a
-        href="https://github.com/Jensooon/DeezerDetector"
-        target="_blank"
-        rel="noopener noreferrer"
-        [class.dark-card-button]="isComponentBGDark"
-        [class.white-card-button]="!isComponentBGDark"
-      >
-        Check this out on Github!
-      </a>
-    </div>
-
-    <div
-      appScrollReveal
-      [class.dark-card]="isComponentBGDark"
-      [class.white-card]="!isComponentBGDark"
-    >
-      <div class="card-details">
-        <p class="text-title">Reinforcement Learning for Doom</p>
-        <p class="text-body">
-          Check out my group coursework on using RL algorithms to play the
-          popular videogame Doom.
-        </p>
-      </div>
-
-      <a
-        href="https://github.com/Jensooon/rl_cw_group_94"
-        target="_blank"
-        rel="noopener noreferrer"
-        [class.dark-card-button]="isComponentBGDark"
-        [class.white-card-button]="!isComponentBGDark"
-      >
-        Check this out on Github!
-      </a>
-    </div>
-
-    <ng-lottie
-      [class.active-red-pong]="isComponentBGDark"
-      [class.inactive-red-pong]="!isComponentBGDark"
-      [options]="pongRedOptions"
-      width="300px"
-      height="300px"
-    ></ng-lottie>
-
-    <ng-lottie
-      [class.inactive-green-pong]="isComponentBGDark"
-      [class.active-green-pong]="!isComponentBGDark"
-      [options]="pongGreenOptions"
-      width="300px"
-      height="300px"
-    ></ng-lottie>
+      Check this out on Github!
+    </a>
   </div>
+
+  <!-- 
+  <ng-lottie
+    [class.active-red-devCode]="isComponentBGDark"
+    [class.inactive-red-devCode]="!isComponentBGDark"
+    [options]="devCodeRedOptions"
+    width="350px"
+    height="350px"
+  ></ng-lottie>
+
+  <ng-lottie
+    [class.inactive-green-devCode]="isComponentBGDark"
+    [class.active-green-devCode]="!isComponentBGDark"
+    [options]="devCodeGreenOptions"
+    width="350px"
+    height="350px"
+  ></ng-lottie> -->
+
+  <div
+    appScrollReveal
+    [class.dark-card]="isComponentBGDark"
+    [class.white-card]="!isComponentBGDark"
+  >
+    <div class="card-details">
+      <p class="text-title">
+        Improving the Robustness of Music Deepfake Detection
+      </p>
+      <p
+        [class.dark-text-body]="isComponentBGDark"
+        [class.white-text-body]="!isComponentBGDark"
+      >
+        See the work behind my university dissertation on music deepfake
+        detection.
+      </p>
+    </div>
+
+    <a
+      href="https://github.com/Jensooon/DeezerDetector"
+      target="_blank"
+      rel="noopener noreferrer"
+      [class.dark-card-button]="isComponentBGDark"
+      [class.white-card-button]="!isComponentBGDark"
+    >
+      Check this out on Github!
+    </a>
+  </div>
+
+  <div
+    appScrollReveal
+    [class.dark-card]="isComponentBGDark"
+    [class.white-card]="!isComponentBGDark"
+  >
+    <div class="card-details">
+      <p class="text-title">Reinforcement Learning for Doom</p>
+      <p
+        [class.dark-text-body]="isComponentBGDark"
+        [class.white-text-body]="!isComponentBGDark"
+      >
+        Check out my group coursework on using RL algorithms to play the popular
+        videogame Doom.
+      </p>
+    </div>
+
+    <a
+      href="https://github.com/Jensooon/rl_cw_group_94"
+      target="_blank"
+      rel="noopener noreferrer"
+      [class.dark-card-button]="isComponentBGDark"
+      [class.white-card-button]="!isComponentBGDark"
+    >
+      Check this out on Github!
+    </a>
+  </div>
+  <!-- 
+  <ng-lottie
+    [class.active-red-pong]="isComponentBGDark"
+    [class.inactive-red-pong]="!isComponentBGDark"
+    [options]="pongRedOptions"
+    width="300px"
+    height="300px"
+  ></ng-lottie>
+
+  <ng-lottie
+    [class.inactive-green-pong]="isComponentBGDark"
+    [class.active-green-pong]="!isComponentBGDark"
+    [options]="pongGreenOptions"
+    width="300px"
+    height="300px"
+  ></ng-lottie> -->
 </div>
