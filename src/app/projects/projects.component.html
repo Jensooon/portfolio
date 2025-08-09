@@ -120,4 +120,18 @@
     width="300px"
     height="300px"
   ></ng-lottie> -->
+  <ng-lottie
+    [class.active-red-rocker]="isComponentBGDark"
+    [class.inactive-red-rocker]="!isComponentBGDark"
+    [options]="rockerRedOptions"
+    width="250px"
+    height="250px"
+  ></ng-lottie>
+  <ng-lottie
+    [class.inactive-green-rocker]="isComponentBGDark"
+    [class.active-green-rocker]="!isComponentBGDark"
+    [options]="rockerGreenOptions"
+    width="250px"
+    height="250px"
+  ></ng-lottie>
 </div>

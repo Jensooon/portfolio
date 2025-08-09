@@ -1,11 +1,9 @@
 .projects-wrapper {
   /* Switched to grid for better control over wrapping layouts */
-  display: grid;
-
-  /* This is the key: It creates as many 600px columns as will fit,
-     and the 'auto-fit' and '1fr' values handle the space to keep the
-     whole grid centered, not just one line. */
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   /* This centers the cards within their grid columns */
   place-items: center;
@@ -25,7 +23,7 @@
 
 .dark-card,
 .white-card {
-  width: 600px;
+  width: 550px;
   height: 60px;
   border-radius: 5px;
   position: relative;
@@ -185,6 +183,19 @@
 .dark-card:hover .dark-text-body,
 .white-card:hover .white-text-body {
   transform: translateY(-5px);
+}
+
+.active-red-rocker {
+  display: block;
+}
+.inactive-red-rocker {
+  display: none;
+}
+.active-green-rocker {
+  display: block;
+}
+.inactive-green-rocker {
+  display: none;
 }
 
 .active-red-pong {

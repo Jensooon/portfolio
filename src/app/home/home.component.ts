@@ -22,7 +22,6 @@ import { TitleComponent } from './title/title.component';
 import { SolarSystemComponent } from './solar-system/solar-system.component';
 import { TruckComponent } from './truck/truck.component';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
-import { CertificatesComponent } from '../certificates/certificates.component';
 
 declare var FinisherHeader: any;
 
@@ -39,7 +38,6 @@ declare var FinisherHeader: any;
     EducationComponent,
     ExperienceComponent,
     DissertationComponent,
-    CertificatesComponent,
     TruckComponent,
     LottieComponent,
   ],
