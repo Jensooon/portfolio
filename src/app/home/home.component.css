@@ -1,50 +1,84 @@
-.home-wrapper {
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#projects {
+  margin: 0 0 3rem 0;
 }
 
 #home {
   margin: 0;
   max-width: none;
 }
-#projects {
-  margin: 0 0 3rem 0;
-}
 
-/* This is your existing rule, which is now correct */
+/* Your existing rule, which is now correct */
 .profile-content {
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 90vh;
   width: 100%;
-  position: relative;
+  position: relative; /* This is the anchor for the lightning */
 }
 
 /* This targets the components inside .profile-content */
 .profile-content > * {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* Keeps main content on top */
+}
+
+/* 👇 ADD THESE NEW RULES FOR THE LIGHTNING 👇 */
+/* CHANGE to this more specific selector */
+.profile-content > .lightning {
+  position: absolute;
+  z-index: 0;
+  height: 250px;
+  width: 250px;
+}
+
+/* You also need to update the positioning rules */
+.profile-content > .lightning.top-left {
+  top: 40px;
+  left: 40px;
+  transform: rotate(120deg);
+}
+
+.profile-content > .lightning.bottom-right {
+  bottom: 40px;
+  right: 40px;
+  transform: rotate(-45deg);
+}
+
+/* You also need to update the positioning rules */
+.profile-content > .lightning.top-right {
+  top: 40px;
+  right: 40px;
+  transform: rotate(-150deg);
+}
+
+.profile-content > .lightning.bottom-left {
+  bottom: 40px;
+  left: 40px;
+  transform: rotate(30deg);
 }
 
 .active-red-rocker {
   display: block;
+  width: 300px;
+  height: 300px;
 }
 .inactive-red-rocker {
   display: none;
 }
 .active-green-rocker {
   display: block;
+  width: 300px;
+  height: 300px;
 }
 .inactive-green-rocker {
   display: none;
-}
-
-/* Rotates the animation 90 degrees clockwise */
-.lottie-container {
-  transform: rotate(90deg);
 }
 
 .headings {
@@ -96,6 +130,26 @@ a:hover {
   a {
     font-size: 13px;
   }
+  .profile-content > .lightning {
+    width: 200px; /* Extra-large size */
+    height: 200px;
+  }
+  .profile-content > .lightning.top-left {
+    top: 50px;
+    left: 50px;
+  }
+  .profile-content > .lightning.bottom-right {
+    bottom: 50px;
+    right: 50px;
+  }
+  .profile-content > .lightning.top-right {
+    top: 50px;
+    right: 50px;
+  }
+  .profile-content > .lightning.bottom-left {
+    bottom: 50px;
+    left: 50px;
+  }
 }
 
 /* Mobile size (max-width: 767px) */
@@ -107,21 +161,70 @@ a:hover {
   .profile-content {
     flex-direction: column;
   }
+  .profile-content > .lightning {
+    /* Use !important ONLY for testing */
+    width: 150px;
+    height: 150px;
+  }
+  /* You also need to update the positioning rules */
+  .profile-content > .lightning.top-left {
+    top: -20px;
+    left: 50px;
+    transform: rotate(160deg);
+  }
+
+  .profile-content > .lightning.bottom-right {
+    bottom: -20px;
+    right: 30px;
+    transform: rotate(-45deg);
+  }
+
+  /* You also need to update the positioning rules */
+  .profile-content > .lightning.top-right {
+    display: none;
+  }
+
+  .profile-content > .lightning.bottom-left {
+    display: none;
+  }
+
+  .dark-solar-system {
+    display: block;
+  }
+
+  .white-solar-system {
+    display: none;
+  }
+
+  .dark-truck {
+    display: none;
+  }
+
+  .white-truck {
+    display: block;
+    margin-left: 15px;
+  }
+  .active-green-rocker {
+    height: 200px;
+    width: 200px;
+  }
+  .active-red-rocker {
+    height: 200px;
+    width: 200px;
+  }
 }
 
-.dark-solar-system {
-  display: block;
-}
-
-.white-solar-system {
-  display: none;
-}
-
-.dark-truck {
-  display: none;
-}
-
-.white-truck {
-  display: block;
-  margin-left: 15px;
+@media (min-width: 1300px) {
+  .active-green-rocker {
+    height: 400px;
+    width: 400px;
+  }
+  .active-red-rocker {
+    height: 400px;
+    width: 400px;
+  }
+  .profile-content > .lightning {
+    width: 325px; /* Extra-large size */
+    height: 325px;
+  }
 }

@@ -54,8 +54,20 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     path: '/assets/lottie/red bottle rocker.json',
   };
 
-  purpleLightningOptions: AnimationOptions = {
-    path: '/assets/lottie/purple lightning.json',
+  purple7B52AELightningOptions: AnimationOptions = {
+    path: '/assets/lottie/7B52AE lightning.json',
+  };
+
+  purple653496LightningOptions: AnimationOptions = {
+    path: '/assets/lottie/653496 lightning.json',
+  };
+
+  green74B652LightningOptions: AnimationOptions = {
+    path: '/assets/lottie/74B652 lightning.json',
+  };
+
+  green94C773LightningOptions: AnimationOptions = {
+    path: '/assets/lottie/94C773 lightning.json',
   };
 
   constructor(

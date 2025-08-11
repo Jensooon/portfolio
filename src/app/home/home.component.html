@@ -5,24 +5,39 @@
     [class.white-class-footer]="!isComponentBGDark"
   >
     <app-title class="title"></app-title>
-
     <ng-lottie
       [class.active-red-rocker]="isComponentBGDark"
       [class.inactive-red-rocker]="!isComponentBGDark"
       [options]="rockerRedOptions"
-      width="250px"
-      height="250px"
     ></ng-lottie>
     <ng-lottie
       [class.inactive-green-rocker]="isComponentBGDark"
       [class.active-green-rocker]="!isComponentBGDark"
       [options]="rockerGreenOptions"
-      width="250px"
-      height="250px"
+    ></ng-lottie>
+
+    <ng-lottie
+      class="lightning top-left"
+      [options]="purple7B52AELightningOptions"
+    ></ng-lottie>
+
+    <ng-lottie
+      class="lightning top-right"
+      [options]="green94C773LightningOptions"
+    ></ng-lottie>
+
+    <ng-lottie
+      class="lightning bottom-right"
+      [options]="purple653496LightningOptions"
+    ></ng-lottie>
+    <ng-lottie
+      class="lightning bottom-left"
+      [options]="green74B652LightningOptions"
     ></ng-lottie>
   </div>
+</section>
 
-  <!-- <h1 class="sub-title">What are my interests?</h1>
+<!-- <h1 class="sub-title">What are my interests?</h1>
     <div class="four-by-four">
       <p>🖥️ Software Engineering</p>
       <p>🤖 AI & Machine Learning</p>
@@ -41,10 +56,9 @@
     <a href="https://github.com/Jensooon/UsefulAutoHotkeyScripts"
       >- Improve prodcutivity using these useful autohotkey scripts.</a
     > -->
-</section>
 
 <div
-  class="home-wrapper"
+  class="wrapper"
   [class.dark-class]="isComponentBGDark"
   [class.white-class]="!isComponentBGDark"
 >
