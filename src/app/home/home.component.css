@@ -29,6 +29,24 @@
   z-index: 1;
 }
 
+.active-red-rocker {
+  display: block;
+}
+.inactive-red-rocker {
+  display: none;
+}
+.active-green-rocker {
+  display: block;
+}
+.inactive-green-rocker {
+  display: none;
+}
+
+/* Rotates the animation 90 degrees clockwise */
+.lottie-container {
+  transform: rotate(90deg);
+}
+
 .headings {
   grid-area: headings;
   display: flex;

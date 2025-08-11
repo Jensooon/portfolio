@@ -6,15 +6,20 @@
   >
     <app-title class="title"></app-title>
 
-    <app-solar-system
-      [class.dark-solar-system]="isComponentBGDark"
-      [class.white-solar-system]="!isComponentBGDark"
-    ></app-solar-system>
-
-    <app-truck
-      [class.dark-truck]="isComponentBGDark"
-      [class.white-truck]="!isComponentBGDark"
-    ></app-truck>
+    <ng-lottie
+      [class.active-red-rocker]="isComponentBGDark"
+      [class.inactive-red-rocker]="!isComponentBGDark"
+      [options]="rockerRedOptions"
+      width="250px"
+      height="250px"
+    ></ng-lottie>
+    <ng-lottie
+      [class.inactive-green-rocker]="isComponentBGDark"
+      [class.active-green-rocker]="!isComponentBGDark"
+      [options]="rockerGreenOptions"
+      width="250px"
+      height="250px"
+    ></ng-lottie>
   </div>
 
   <!-- <h1 class="sub-title">What are my interests?</h1>

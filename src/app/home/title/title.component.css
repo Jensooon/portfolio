@@ -15,6 +15,7 @@ h1 {
   font-size: 50px;
   /* This ensures long words can still wrap if they are
      wider than the container, even with the smaller font size. */
+  font-family: "Lightning", sans-serif;
 }
 /* Default text color */
 /* Tablet size (768px to 1024px) */

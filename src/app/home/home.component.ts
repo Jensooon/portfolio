@@ -47,6 +47,16 @@ declare var FinisherHeader: any;
 export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   isComponentBGDark: boolean = false;
   private themeSubscription?: Subscription;
+  rockerGreenOptions: AnimationOptions = {
+    path: '/assets/lottie/green bottle rocker.json',
+  };
+  rockerRedOptions: AnimationOptions = {
+    path: '/assets/lottie/red bottle rocker.json',
+  };
+
+  purpleLightningOptions: AnimationOptions = {
+    path: '/assets/lottie/purple lightning.json',
+  };
 
   constructor(
     private themeService: ThemeServiceService,
