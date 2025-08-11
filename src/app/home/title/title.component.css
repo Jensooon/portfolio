@@ -15,8 +15,21 @@
   font-size: 60px;
   /* This ensures long words can still wrap if they are
      wider than the container, even with the smaller font size. */
+}
+
+.headerlightning {
+  font-weight: 10;
+  text-align: center;
+  font-size: 60px;
   font-family: "Lightning", sans-serif;
 }
+.headerspace {
+  font-weight: 10;
+  text-align: center;
+  font-size: 60px;
+  font-family: "Earth Orbiter", sans-serif;
+}
+
 /* Default text color */
 /* Tablet size (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {

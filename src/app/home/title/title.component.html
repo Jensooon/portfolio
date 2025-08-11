@@ -1,1 +1,7 @@
-<h1 class="header" #squeezeHeading>Hi! I'm Jenson</h1>
+<h1
+  [class.headerspace]="isComponentBGDark"
+  [class.headerlightning]="!isComponentBGDark"
+  #squeezeHeading
+>
+  Hi! I'm Jenson
+</h1>

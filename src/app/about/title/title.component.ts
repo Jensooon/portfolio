@@ -1,13 +1,33 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ThemeServiceService } from '../../theme-service.service';
 
 @Component({
   selector: 'app-title',
   standalone: true,
   imports: [],
   templateUrl: './title.component.html',
-  styleUrl: './title.component.css'
+  styleUrl: './title.component.css',
 })
 export class TitleComponent implements AfterViewInit {
+  isComponentBGDark: boolean = false;
+  private themeSubscription?: Subscription;
+
+  constructor(private themeService: ThemeServiceService) {}
+
+  ngOnInit() {
+    this.themeSubscription = this.themeService
+      .getGlobalDark()
+      .subscribe((isDark) => {
+        this.isComponentBGDark = isDark;
+      });
+  }
+
+  ngOnDestroy() {
+    if (this.themeSubscription) {
+      this.themeSubscription.unsubscribe();
+    }
+  }
 
   // Get a reference to the #squeezeHeading element from the template
   @ViewChild('squeezeHeading') headingRef!: ElementRef<HTMLHeadingElement>;
@@ -23,9 +43,12 @@ export class TitleComponent implements AfterViewInit {
     const text = headingElement.textContent || '';
 
     // Split the text and wrap each character in its own <span>
-    const newHtml = text.split('').map(char => {
-      return char === ' ' ? `<span>&nbsp;</span>` : `<span>${char}</span>`;
-    }).join('');
+    const newHtml = text
+      .split('')
+      .map((char) => {
+        return char === ' ' ? `<span>&nbsp;</span>` : `<span>${char}</span>`;
+      })
+      .join('');
 
     headingElement.innerHTML = newHtml;
 
@@ -33,7 +56,7 @@ export class TitleComponent implements AfterViewInit {
     const letters = headingElement.querySelectorAll('span');
 
     // Add event listeners to each letter to handle the animation
-    letters.forEach(letter => {
+    letters.forEach((letter) => {
       // On mouse hover, add the animation class if it's not already animating
       letter.addEventListener('mouseenter', () => {
         if (!letter.classList.contains('is-animating')) {

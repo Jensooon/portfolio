@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   ) {}
 
   waveRedoptions: AnimationOptions = {
-    path: '/assets/lottie/wave red lines.json',
+    path: '/assets/lottie/Space mail.json',
   };
 
   waveGreenoptions: AnimationOptions = {

@@ -112,8 +112,8 @@ a:hover {
 /* Active link styles for dark theme */
 .dark-navHeader.active-link {
   /* Ensure this matches the class name in HTML */
-  border-bottom: 2px solid red; /* Active underline color for dark theme */
-  color: red; /* Optional: change text color when active in dark theme */
+  border-bottom: 2px solid #ae445a; /* Active underline color for dark theme */
+  color: #ae445a; /* Optional: change text color when active in dark theme */
 }
 
 /* Active link styles for white theme */
