@@ -36,26 +36,26 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   isComponentBGDark: boolean = false;
   private themeSubscription?: Subscription;
   rockerGreenOptions: AnimationOptions = {
-    path: '/assets/lottie/green bottle rocker.json',
+    path: 'assets/lottie/green bottle rocker.json',
   };
   rockerRedOptions: AnimationOptions = {
-    path: '/assets/lottie/red bottle rocker.json',
+    path: 'assets/lottie/red bottle rocker.json',
   };
 
   purple7B52AELightningOptions: AnimationOptions = {
-    path: '/assets/lottie/7B52AE lightning.json',
+    path: 'assets/lottie/7B52AE lightning.json',
   };
 
   purple653496LightningOptions: AnimationOptions = {
-    path: '/assets/lottie/653496 lightning.json',
+    path: 'assets/lottie/653496 lightning.json',
   };
 
   green74B652LightningOptions: AnimationOptions = {
-    path: '/assets/lottie/74B652 lightning.json',
+    path: 'assets/lottie/74B652 lightning.json',
   };
 
   green94C773LightningOptions: AnimationOptions = {
-    path: '/assets/lottie/94C773 lightning.json',
+    path: 'assets/lottie/94C773 lightning.json',
   };
 
   constructor(
@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   ) {}
 
   spaceMail: AnimationOptions = {
-    path: '/assets/lottie/Space mail.json',
+    path: 'assets/lottie/Space mail.json',
   };
 
   ngOnInit() {

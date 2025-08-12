@@ -16,29 +16,6 @@ export class ProjectsComponent {
   isComponentBGDark: boolean = false;
   private themeSubscription?: Subscription;
 
-  rockerGreenOptions: AnimationOptions = {
-    path: '/assets/lottie/green bottle rocker.json',
-  };
-  rockerRedOptions: AnimationOptions = {
-    path: '/assets/lottie/red bottle rocker.json',
-  };
-
-  devCodeRedOptions: AnimationOptions = {
-    path: '/assets/lottie/red dev code.json',
-  };
-
-  devCodeGreenOptions: AnimationOptions = {
-    path: '/assets/lottie/green dev code.json',
-  };
-
-  pongRedOptions: AnimationOptions = {
-    path: '/assets/lottie/red pong.json',
-  };
-
-  pongGreenOptions: AnimationOptions = {
-    path: '/assets/lottie/green pong.json',
-  };
-
   constructor(private themeService: ThemeServiceService) {}
 
   ngOnInit() {
