@@ -1,52 +1,69 @@
+<section appScrollReveal id="home">
+  <div
+    class="profile-content"
+    [class.finisher-header]="isComponentBGDark"
+    [class.white-class-footer]="!isComponentBGDark"
+  >
+    <app-title class="title"></app-title>
+    <ng-lottie
+      [class.active-red-rocker]="isComponentBGDark"
+      [class.inactive-red-rocker]="!isComponentBGDark"
+      [options]="rockerRedOptions"
+    ></ng-lottie>
+    <ng-lottie
+      [class.inactive-green-rocker]="isComponentBGDark"
+      [class.active-green-rocker]="!isComponentBGDark"
+      [options]="rockerGreenOptions"
+    ></ng-lottie>
+
+    <ng-lottie
+      class="lightning top-left"
+      [options]="purple7B52AELightningOptions"
+      [hidden]="isComponentBGDark"
+    ></ng-lottie>
+
+    <ng-lottie
+      class="lightning top-right"
+      [options]="green94C773LightningOptions"
+      [hidden]="isComponentBGDark"
+    ></ng-lottie>
+
+    <ng-lottie
+      class="lightning bottom-right"
+      [options]="purple653496LightningOptions"
+      [hidden]="isComponentBGDark"
+    ></ng-lottie>
+    <ng-lottie
+      class="lightning bottom-left"
+      [options]="green74B652LightningOptions"
+      [hidden]="isComponentBGDark"
+    ></ng-lottie>
+  </div>
+</section>
+
 <div
   class="wrapper"
   [class.dark-class]="isComponentBGDark"
   [class.white-class]="!isComponentBGDark"
 >
-  <div class="profile-content">
-    <app-user-card class="user-card"></app-user-card>
-
-    <div class="headings">
-      <h1 class="title">Jenson Wintle</h1>
-      <h2>Software Engineer</h2>
-    </div>
-  </div>
-
-  <section appScrollReveal>
-    <h1 class="sub-title">What are my interests?</h1>
-    <div class="four-by-four">
-      <p>🖥️ Software Engineering</p>
-      <p>🤖 AI & Machine Learning</p>
-      <p>📐 Mathematics & Problem Solving</p>
-      <p>🎸 Practicing & Playing Guitar</p>
-    </div>
+  <section appScrollReveal id="about">
+    <app-about></app-about>
   </section>
+  <ng-lottie
+    [class.active-space-mail]="isComponentBGDark"
+    [class.inactive-space-mail]="!isComponentBGDark"
+    [options]="spaceMail"
+    width="30vw"
+    height="30vh"
+  ></ng-lottie>
 
-  <section appScrollReveal>
-    <h1 class="sub-title">Projects</h1>
-    <a href="https://github.com/Jensooon/AzureAiWebsiteJW">
-      - Explore Azure AI capabilities in a website. Describe images, translate
-      text, detect characters in images and much more!
-    </a>
-    <a href="https://github.com/Jensooon/WPFCalendarApp">
-      - Track dates, plan events in this WPF Calendar Application. Built with
-      MVVM and Prism.
-    </a>
-    <a href="https://github.com/Jensooon/UsefulAutoHotkeyScripts"
-      >- Improve prodcutivity using these useful autohotkey scripts.</a
-    >
+  <ng-lottie
+    class="lightning top-left"
+    [options]="purple7B52AELightningOptions"
+    [hidden]="isComponentBGDark"
+  ></ng-lottie>
+
+  <section id="projects">
+    <app-projects></app-projects>
   </section>
-  <!-- 
-  <section appScrollReveal>
-    <h1 class="sub-title">Skills</h1>
-    <p>
-      - Explore Azure AI capabilities in a website. Describe images, translate
-      text, detect characters in images and much more!
-    </p>
-    <p>
-      - Track dates, plan events in this WPF Calendar Application. Built with
-      MVVM and Prism.
-    </p>
-    <p>Full stack development in Delphi</p>
-  </section> -->
 </div>

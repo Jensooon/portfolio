@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ThemeServiceService {
-  private globalIsDark = new BehaviorSubject<boolean>(false);
+  private globalIsDark = new BehaviorSubject<boolean>(true);
 
   setGlobalDark(value: boolean) {
     this.globalIsDark.next(value);

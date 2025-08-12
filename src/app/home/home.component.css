@@ -4,15 +4,81 @@
   align-items: center;
 }
 
+#projects {
+  margin: 0 0 3rem 0;
+}
+
+#home {
+  margin: 0;
+  max-width: none;
+}
+
+/* Your existing rule, which is now correct */
 .profile-content {
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: auto auto;
-  align-items: center;
+  display: flex;
   justify-content: center;
-  grid-template-areas:
-    "user-card headings"
-    "user-card headings";
+  align-items: center;
+  height: 90vh;
+  width: 100%;
+  position: relative; /* This is the anchor for the lightning */
+}
+
+/* This targets the components inside .profile-content */
+.profile-content > * {
+  position: relative;
+  z-index: 1; /* Keeps main content on top */
+}
+
+/* 👇 ADD THESE NEW RULES FOR THE LIGHTNING 👇 */
+/* CHANGE to this more specific selector */
+.profile-content > .lightning {
+  position: absolute;
+  z-index: 0;
+  height: 250px;
+  width: 250px;
+}
+
+/* You also need to update the positioning rules */
+.profile-content > .lightning.top-left {
+  top: 40px;
+  left: 40px;
+  transform: rotate(120deg);
+}
+
+.profile-content > .lightning.bottom-right {
+  bottom: 40px;
+  right: 40px;
+  transform: rotate(-45deg);
+}
+
+/* You also need to update the positioning rules */
+.profile-content > .lightning.top-right {
+  top: 40px;
+  right: 40px;
+  transform: rotate(-150deg);
+}
+
+.profile-content > .lightning.bottom-left {
+  bottom: 40px;
+  left: 40px;
+  transform: rotate(30deg);
+}
+
+.active-red-rocker {
+  display: block;
+  width: 300px;
+  height: 300px;
+}
+.inactive-red-rocker {
+  display: none;
+}
+.active-green-rocker {
+  display: block;
+  width: 300px;
+  height: 300px;
+}
+.inactive-green-rocker {
+  display: none;
 }
 
 .headings {
@@ -32,7 +98,7 @@ h2 {
 a {
   font-size: 20px;
   font-weight: 500;
-  font-family: "Caveat", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "JetBrains Mono", monospace;
   text-align: center;
   text-decoration: none;
   color: inherit;
@@ -45,10 +111,44 @@ a:hover {
   color: #5cadd2;
 }
 
+.active-space-mail {
+  display: block;
+}
+.inactive-space-mail {
+  display: none;
+}
+
+.active-circle-lightning {
+  display: block;
+}
+.inactive-circle-lightning {
+  display: none;
+}
+
 /* Tablet size (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   a {
     font-size: 13px;
+  }
+  .profile-content > .lightning {
+    width: 200px; /* Extra-large size */
+    height: 200px;
+  }
+  .profile-content > .lightning.top-left {
+    top: 50px;
+    left: 50px;
+  }
+  .profile-content > .lightning.bottom-right {
+    bottom: 50px;
+    right: 50px;
+  }
+  .profile-content > .lightning.top-right {
+    top: 50px;
+    right: 50px;
+  }
+  .profile-content > .lightning.bottom-left {
+    bottom: 50px;
+    left: 50px;
   }
 }
 
@@ -56,5 +156,86 @@ a:hover {
 @media (max-width: 767px) {
   a {
     font-size: 12px;
+  }
+
+  .profile-content {
+    flex-direction: column;
+  }
+  .profile-content > .lightning {
+    /* Use !important ONLY for testing */
+    width: 150px;
+    height: 150px;
+  }
+  /* You also need to update the positioning rules */
+  .profile-content > .lightning.top-left {
+    top: -20px;
+    left: 50px;
+    transform: rotate(160deg);
+  }
+
+  .profile-content > .lightning.bottom-right {
+    bottom: -20px;
+    right: 30px;
+    transform: rotate(-45deg);
+  }
+
+  /* You also need to update the positioning rules */
+  .profile-content > .lightning.top-right {
+    display: none;
+  }
+
+  .profile-content > .lightning.bottom-left {
+    display: none;
+  }
+
+  .dark-solar-system {
+    display: block;
+  }
+
+  .white-solar-system {
+    display: none;
+  }
+
+  .dark-truck {
+    display: none;
+  }
+
+  .white-truck {
+    display: block;
+    margin-left: 15px;
+  }
+  .active-green-rocker {
+    height: 200px;
+    width: 200px;
+  }
+  .active-red-rocker {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .active-green-rocker {
+    height: 400px;
+    width: 400px;
+  }
+  .active-red-rocker {
+    height: 400px;
+    width: 400px;
+  }
+  .profile-content > .lightning {
+    width: 325px; /* Extra-large size */
+    height: 325px;
+  }
+  .profile-content > .lightning {
+    width: 200px; /* Extra-large size */
+    height: 200px;
+  }
+
+  .profile-content > .lightning.bottom-right {
+    right: 50px;
+  }
+  .profile-content > .lightning.top-right {
+    right: 50px;
   }
 }

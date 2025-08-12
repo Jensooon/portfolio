@@ -1,10 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-body,
+body {
+  margin: 0;
+}
 html {
   padding: 0;
   margin: 0;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .dark-class {
@@ -18,48 +21,60 @@ html {
   height: 100%;
 }
 
+/* not in use: */
+.dark-class-header {
+  background: #2e2e2e;
+  color: white;
+  height: 100%;
+}
+/* not in use: */
+.white-class-header {
+  background: #e0dfdf;
+  color: black;
+  height: 100%;
+}
 .title {
   font-size: 50px; /* 14px */
   font-weight: 1000;
-  font-family: "Caveat", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "JetBrains Mono", monospace;
 }
 /* Same as title */
 h1 {
   font-size: 50px;
   font-weight: 1000;
-  font-family: "Caveat", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "JetBrains Mono", monospace;
 }
 
 .sub-title {
   font-size: 35px; /* 14px */
   font-weight: 1000;
-  font-family: "Caveat", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "JetBrains Mono", monospace;
   margin-bottom: 3%;
 }
 
 h2 {
   font-size: 35px; /* 14px */
   font-weight: 1000;
-  font-family: "Caveat", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "JetBrains Mono", monospace;
   margin-bottom: 3%;
 }
 
 h3 {
   font-size: 30px;
   font-weight: 1000;
-  font-family: "Caveat", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "JetBrains Mono", monospace;
 }
 
 h4 {
   font-size: 25px;
   font-weight: 1000;
-  font-family: "Caveat", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "JetBrains Mono", monospace;
   text-decoration: underline;
 }
 h5 {
   font-size: 25px;
   font-weight: 1000;
-  font-family: "Caveat", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "JetBrains Mono", monospace;
 }
 
 section {
@@ -73,19 +88,36 @@ section {
 p {
   font-size: 20px;
   font-weight: 500;
-  font-family: "Caveat", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "JetBrains Mono", monospace;
   text-align: center;
 }
-.four-by-four {
+/* Responsive grid layouts */
+.four-by-four,
+.three-by-one {
   display: grid;
-  grid-template-columns: 5fr 5fr;
-  grid-template-rows: 5fr 5fr;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 5%;
+  width: 100%;
+  gap: 1.5rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
+/* On larger screens, use 2 columns */
+@media (min-width: 768px) {
+  .four-by-four,
+  .three-by-one {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* On mobile, stack them in a single column */
+@media (max-width: 767px) {
+  .four-by-four,
+  .three-by-one {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TODO MAKE SURE DOESN'T CAUSE AN OVERFLOW WHITESPACE PROBLEM IF I USE IN THE FUTURE (ON MOBILE SCREENS) */
 .four-by-four-fixed {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
@@ -94,15 +126,6 @@ p {
   width: 300px; /* Set a fixed width */
   height: 150px; /* Set a fixed height */
   margin: 0 auto; /* Center the grid on the page */
-}
-
-.three-by-one {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto;
-  align-items: center;
-  justify-content: center;
-  gap: 5%;
 }
 
 /* Tablet size (768px to 1024px) */

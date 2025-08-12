@@ -1,9 +1,10 @@
 /* REMASTERED */
 /* RTX-ON */
 /* completely redone toggle and droid */
+/* credit https://uiverse.io/Galahhad/silent-robin-40 */
 
 .bb8-toggle {
-  --toggle-size: 16px;
+  --toggle-size: 6px;
   /* finally I removed the scale now everything depends on the font-size */
   /* --margin-top-for-head: 1.75em; */
   /* it's just in case 👆 */
@@ -17,6 +18,25 @@
   --transition: 0.4s;
   --accent: #de7d2f;
   --bb8-bg: #fff;
+}
+
+@media (max-width: 767px) {
+  .bb8-toggle {
+  --toggle-size: 3px;
+  /* finally I removed the scale now everything depends on the font-size */
+  /* --margin-top-for-head: 1.75em; */
+  /* it's just in case 👆 */
+  --toggle-width: 10.625em;
+  --toggle-height: 5.625em;
+  --toggle-offset: calc((var(--toggle-height) - var(--bb8-diameter)) / 2);
+  --toggle-bg: linear-gradient(#2c4770, #070e2b 35%, #628cac 50% 70%, #a6c5d4)
+    no-repeat;
+  --bb8-diameter: 4.375em;
+  --radius: 99em;
+  --transition: 0.4s;
+  --accent: #de7d2f;
+  --bb8-bg: #fff;
+  }
 }
 
 .bb8-toggle,

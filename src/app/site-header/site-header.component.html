@@ -1,35 +1,29 @@
-<div
-  [class.dark-class]="isComponentBGDark"
-  [class.white-class]="!isComponentBGDark"
->
+<div>
   <div class="wrapper">
-    <div class="left">
+    <div class="header">jensooon.github.io</div>
+    <div class="headings">
       <a
         [class.dark-navHeader]="isComponentBGDark"
         [class.white-navHeader]="!isComponentBGDark"
-        routerLink="/home"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-        >Home</a
+        [ngClass]="{ 'active-link': activeSection === 'home' }"
+        (click)="scrollToSection('home')"
+        >home</a
       >
       <a
         [class.dark-navHeader]="isComponentBGDark"
         [class.white-navHeader]="!isComponentBGDark"
-        routerLink="/education"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-        >Education</a
+        [ngClass]="{ 'active-link': activeSection === 'about' }"
+        (click)="scrollToSection('about')"
+        >about</a
       >
       <a
         [class.dark-navHeader]="isComponentBGDark"
         [class.white-navHeader]="!isComponentBGDark"
-        routerLink="/experience"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-        >Experience</a
+        [ngClass]="{ 'active-link': activeSection === 'projects' }"
+        (click)="scrollToSection('projects')"
+        >projects</a
       >
+      <app-bb8-toggle class="bb8"></app-bb8-toggle>
     </div>
-    <app-bb8-toggle class="bb8"></app-bb8-toggle>
-    <app-mobile-toggle class="mobile-toggle"></app-mobile-toggle>
   </div>
 </div>

@@ -1,11 +1,11 @@
 <div
-  class="wrapper"
   [class.dark-class]="isComponentBGDark"
   [class.white-class]="!isComponentBGDark"
 >
   <app-site-header></app-site-header>
   <div class="middle">
-    <router-outlet></router-outlet>
+    <app-home></app-home>
   </div>
-  <app-site-footer></app-site-footer>
+
+  <app-site-footer class="footer"></app-site-footer>
 </div>

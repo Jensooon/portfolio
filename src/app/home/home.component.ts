@@ -1,33 +1,127 @@
-import { Component } from '@angular/core';
+// home.component.ts
+
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  AfterViewInit,
+  HostListener,
+  ElementRef,
+  Renderer2,
+} from '@angular/core';
 import { ThemeServiceService } from '../theme-service.service';
 import { Subscription } from 'rxjs';
 import { ScrollRevealDirective } from '../scroll-reveal.directive';
-import { UserCardComponent } from './user-card/user-card.component';
+import { AboutComponent } from '../about/about.component';
+import { ProjectsComponent } from '../projects/projects.component';
+import { TitleComponent } from './title/title.component';
+import { AnimationOptions, LottieComponent } from 'ngx-lottie';
+
+declare var FinisherHeader: any;
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ScrollRevealDirective, UserCardComponent],
+  imports: [
+    ScrollRevealDirective,
+    TitleComponent,
+    AboutComponent,
+    ProjectsComponent,
+    LottieComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   isComponentBGDark: boolean = false;
   private themeSubscription?: Subscription;
+  rockerGreenOptions: AnimationOptions = {
+    path: '/assets/lottie/green bottle rocker.json',
+  };
+  rockerRedOptions: AnimationOptions = {
+    path: '/assets/lottie/red bottle rocker.json',
+  };
 
-  constructor(private themeService: ThemeServiceService) {}
+  purple7B52AELightningOptions: AnimationOptions = {
+    path: '/assets/lottie/7B52AE lightning.json',
+  };
+
+  purple653496LightningOptions: AnimationOptions = {
+    path: '/assets/lottie/653496 lightning.json',
+  };
+
+  green74B652LightningOptions: AnimationOptions = {
+    path: '/assets/lottie/74B652 lightning.json',
+  };
+
+  green94C773LightningOptions: AnimationOptions = {
+    path: '/assets/lottie/94C773 lightning.json',
+  };
+
+  constructor(
+    private themeService: ThemeServiceService,
+    private el: ElementRef,
+    private renderer: Renderer2
+  ) {}
+
+  spaceMail: AnimationOptions = {
+    path: '/assets/lottie/Space mail.json',
+  };
 
   ngOnInit() {
     this.themeSubscription = this.themeService
       .getGlobalDark()
       .subscribe((isDark) => {
         this.isComponentBGDark = isDark;
+        // Re-initialize the header AFTER Angular has updated the class
+        // The timeout ensures this runs after the DOM update.
+        setTimeout(() => this.initializeFinisherHeader(), 0);
       });
   }
 
   ngOnDestroy() {
     if (this.themeSubscription) {
       this.themeSubscription.unsubscribe();
+    }
+  }
+
+  ngAfterViewInit(): void {
+    this.initializeFinisherHeader();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.initializeFinisherHeader();
+  }
+
+  private initializeFinisherHeader(): void {
+    // Target the main container div
+    const profileContentEl =
+      this.el.nativeElement.querySelector('.profile-content');
+
+    if (profileContentEl) {
+      // Always try to find and remove an old canvas to prevent duplicates
+      const oldCanvas = profileContentEl.querySelector('canvas');
+      if (oldCanvas) {
+        this.renderer.removeChild(profileContentEl, oldCanvas);
+      }
+
+      // ONLY create a new animation if the class is present (i.e., in dark mode)
+      if (profileContentEl.classList.contains('finisher-header')) {
+        new FinisherHeader({
+          count: 30,
+          size: { min: 2, max: 8, pulse: 0 },
+          speed: { x: { min: 0, max: 0.4 }, y: { min: 0, max: 0.6 } },
+          colors: {
+            background: '#373737',
+            particles: ['#fbfcca', '#d7f3fe', '#ffd0a7'],
+          },
+          blending: 'overlay',
+          opacity: { center: 1, edge: 0 },
+          skew: -2,
+          shapes: ['c'],
+        });
+      }
     }
   }
 }

@@ -1,17 +1,75 @@
+/* In site-header.component.css */
+
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* IMPORTANT: Set the height of your header here. This MUST match headerHeight in TS. */
+  height: 80px; /* Example height. Adjust as needed. */
+
+  /* Add your background color and other header specific styles here */
+  /* Example: background-color: #333; */
+  /* Example: box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
+  /* 👇 UPDATE THIS LINE for a snappier feel */
+  transition: height 0.25s ease-out, background-color 0.25s ease-out,
+    box-shadow 0.25s ease-out;
+}
+
+/* General styles for when the header is scrolled */
+:host.scrolled {
+  height: 50px; /* The new "squeezed" height. Adjust as you like! */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a nice subtle shadow */
+}
+/* 👇 ADD this new rule to your CSS */
+:host.scrolled .wrapper {
+  /* Set the new, smaller offset for the squeezed header */
+  margin-top: 5px; /* Adjust this to fit the squeezed layout */
+}
+
+/* 👇 Background for LIGHT theme ONLY when scrolled */
+:host.scrolled.light-theme {
+  background-color: #e3e2e2;
+}
+
+/* 👇 Background for DARK theme ONLY when scrolled */
+:host.scrolled.dark-theme {
+  background-color: #2e2e2e;
+}
+
 .wrapper {
   display: flex;
   justify-content: space-between;
+  margin-top: 5px;
   align-items: center;
+  height: 100%; /* Ensures wrapper fills the host height */
+  /* 👇 SET the initial, larger offset for the expanded header */
+  margin-top: 20px; /* Adjust this value to position the content where you like */
+
+  /* 👇 ADD margin-top to the transition */
+  transition: margin-top 0.25s ease-out;
 }
 
-.left {
+.header {
+  font-size: 20px;
+  font-weight: 1000;
+  font-family: "JetBrains Mono", monospace;
+  margin-left: 5%;
+  text-decoration: none; /* Remove default underline */
+}
+
+.headings {
+  padding-top: 5px;
   display: flex;
   align-items: center;
-  margin-left: 2%;
+  align-self: flex-end;
+  margin-right: 10%;
+  height: 100%; /* For vertical alignment of links if wrapper is tall */
 }
 
-.left * {
-  margin-right: 5%;
+.headings * {
+  margin-right: 8%;
 }
 
 .bb8 {
@@ -25,52 +83,120 @@
   padding-right: 1.5%;
 }
 
-.white-navHeader {
-  font-size: 35px; /* 14px */
+/* Base styles for navigation links (both themes) */
+.white-navHeader,
+.dark-navHeader {
+  font-size: 15px;
   font-weight: 1000;
-  font-family: "Caveat", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "JetBrains Mono", monospace;
+  text-decoration: none; /* Remove default underline */
+  padding-bottom: 5px; /* Create space for the border */
+  border-bottom: 2px solid transparent; /* Transparent border to prevent text jump */
+  transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transitions for hover/active */
+  cursor: pointer;
+}
+
+.white-navHeader {
   color: black;
 }
 
 .dark-navHeader {
-  font-size: 35px; /* 14px */
-  font-weight: 1000;
-  font-family: "Caveat", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
+}
+
+/* Hover effect */
+a:hover {
+  color: #5cadd2; /* Apply hover color */
+}
+
+/* Active link styles for dark theme */
+.dark-navHeader.active-link {
+  /* Ensure this matches the class name in HTML */
+  border-bottom: 2px solid #ae445a; /* Active underline color for dark theme */
+  color: #ae445a; /* Optional: change text color when active in dark theme */
+}
+
+/* Active link styles for white theme */
+.white-navHeader.active-link {
+  /* Ensure this matches the class name in HTML */
+  border-bottom: 2px solid #56941e; /* Active underline color for white theme */
+  color: #56941e; /* Optional: change text color when active in white theme */
 }
 
 /* Tablet size (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
+  /* IMPORTANT: If header height changes on tablet, update :host height here */
+  /* Example:
+  :host {
+    height: 60px;
+  }
+  */
+
   .white-navHeader,
   .dark-navHeader {
-    font-size: 30px; /* Adjusted for tablet */
+    font-size: 15px; /* Adjusted for tablet */
+  }
+  :host {
+    /*
+     * The !important rule gives this style priority over others,
+     * ensuring the header remains fixed on smaller screens.
+    */
+    position: fixed !important;
+  }
+
+  :host.scrolled {
+    height: 50px; /* The new "squeezed" height. Adjust as you like! */
   }
 }
 
 /* Mobile size (max-width: 767px) */
 @media (max-width: 767px) {
+  /* IMPORTANT: If header height changes on mobile, update :host height here */
+
   .white-navHeader,
   .dark-navHeader {
-    font-size: 15px; /* Adjusted for mobile (test)*/
+    font-size: 10px;
+  }
+  :host {
+    /*
+     * The !important rule gives this style priority over others,
+     * ensuring the header remains fixed on smaller screens.
+    */
+    position: fixed !important;
+  }
+  :host.scrolled {
+    height: 35px; /* The new "squeezed" height. Adjust as you like! */
+  }
+  .wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5px;
+    align-items: center;
+    height: 100%; /* Ensures wrapper fills the host height */
+    /* 👇 SET the initial, larger offset for the expanded header */
+    margin-top: 20px; /* Adjust this value to position the content where you like */
+
+    /* 👇 ADD margin-top to the transition */
+    transition: margin-top 0.25s ease-out;
+  }
+
+  .header {
+    font-size: 10px;
+    font-weight: 1000;
+    font-family: "JetBrains Mono", monospace;
+    margin-left: 0%;
+    text-decoration: none; /* Remove default underline */
+  }
+
+  .headings {
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    margin-right: 0%;
+    height: 100%; /* For vertical alignment of links if wrapper is tall */
   }
   .bb8 {
-    display: none;
+    margin-bottom: 5px;
   }
-  .mobile-toggle {
-    display: block;
-  }
-}
-
-.dark-navHeader.active {
-  padding-bottom: 5px;
-  border-bottom: 2px solid red;
-}
-
-.white-navHeader.active {
-  padding-bottom: 5px;
-  border-bottom: 2px solid green;
-}
-
-a:hover {
-  color: #5cadd2;
 }
