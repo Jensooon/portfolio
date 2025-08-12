@@ -227,4 +227,15 @@ a:hover {
     width: 325px; /* Extra-large size */
     height: 325px;
   }
+  .profile-content > .lightning {
+    width: 200px; /* Extra-large size */
+    height: 200px;
+  }
+
+  .profile-content > .lightning.bottom-right {
+    right: 50px;
+  }
+  .profile-content > .lightning.top-right {
+    right: 50px;
+  }
 }

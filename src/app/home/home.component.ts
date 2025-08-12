@@ -12,15 +12,9 @@ import {
 import { ThemeServiceService } from '../theme-service.service';
 import { Subscription } from 'rxjs';
 import { ScrollRevealDirective } from '../scroll-reveal.directive';
-import { UserCardComponent } from './user-card/user-card.component';
-import { EducationComponent } from '../education/education.component';
-import { ExperienceComponent } from '../experience/experience.component';
-import { DissertationComponent } from '../dissertation/dissertation.component';
 import { AboutComponent } from '../about/about.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { TitleComponent } from './title/title.component';
-import { SolarSystemComponent } from './solar-system/solar-system.component';
-import { TruckComponent } from './truck/truck.component';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 
 declare var FinisherHeader: any;
@@ -30,15 +24,9 @@ declare var FinisherHeader: any;
   standalone: true,
   imports: [
     ScrollRevealDirective,
-    UserCardComponent,
-    SolarSystemComponent,
     TitleComponent,
     AboutComponent,
     ProjectsComponent,
-    EducationComponent,
-    ExperienceComponent,
-    DissertationComponent,
-    TruckComponent,
     LottieComponent,
   ],
   templateUrl: './home.component.html',
@@ -78,10 +66,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
 
   spaceMail: AnimationOptions = {
     path: '/assets/lottie/Space mail.json',
-  };
-
-  circleLightning: AnimationOptions = {
-    path: '/assets/lottie/circle lightning.json',
   };
 
   ngOnInit() {

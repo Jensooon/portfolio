@@ -1,20 +1,21 @@
-import { Component, HostListener, OnInit, AfterViewInit, OnDestroy, HostBinding } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  OnInit,
+  AfterViewInit,
+  OnDestroy,
+  HostBinding,
+} from '@angular/core';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ThemeServiceService } from '../theme-service.service';
 import { Bb8ToggleComponent } from './bb8-toggle/bb8-toggle.component';
-import { MobileToggleComponent } from './mobile-toggle/mobile-toggle.component';
 
 @Component({
   selector: 'app-site-header',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterModule,
-    Bb8ToggleComponent,
-    MobileToggleComponent,
-  ],
+  imports: [CommonModule, RouterModule, Bb8ToggleComponent],
   templateUrl: './site-header.component.html',
   styleUrl: './site-header.component.css',
 })
@@ -24,7 +25,7 @@ export class SiteHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   activeSection: string | null = null;
   private headerHeight: number = 70;
-  private sectionIds: string[] = ['home', 'about', 'projects', 'dissertation'];
+  private sectionIds: string[] = ['home', 'about', 'projects'];
 
   @HostBinding('class.scrolled')
   isScrolled: boolean = false;
@@ -80,7 +81,10 @@ export class SiteHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
         const sectionTop = sectionElement.offsetTop;
         const sectionHeight = sectionElement.offsetHeight;
 
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionTop + sectionHeight
+        ) {
           currentActive = sectionId;
           break;
         }
@@ -98,11 +102,14 @@ export class SiteHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     const element = document.getElementById(sectionId);
 
     if (element) {
-      const targetScrollPosition = element.getBoundingClientRect().top + window.scrollY - this.headerHeight;
+      const targetScrollPosition =
+        element.getBoundingClientRect().top +
+        window.scrollY -
+        this.headerHeight;
 
       window.scrollTo({
         top: targetScrollPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   }

@@ -1,8 +1,4 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { EducationComponent } from './education/education.component';
-import { ExperienceComponent } from './experience/experience.component';
-import { DissertationComponent } from './dissertation/dissertation.component';
 
 const routeConfig: Routes = [
   // { path: 'home', component: HomeComponent, title: 'Home' },
