@@ -30,7 +30,7 @@
 
 /* 👇 Background for LIGHT theme ONLY when scrolled */
 :host.scrolled.light-theme {
-  background-color: #e0dfdf;
+  background-color: #e3e2e2;
 }
 
 /* 👇 Background for DARK theme ONLY when scrolled */

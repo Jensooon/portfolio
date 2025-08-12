@@ -37,7 +37,10 @@
 
 /* Mobile size (max-width: 767px) */
 @media (max-width: 767px) {
-  .header {
+  .headerspace {
+    font-size: 35px;
+  }
+  .headerlightning {
     font-size: 40px;
   }
 }
@@ -74,7 +77,10 @@
 }
 
 @media (min-width: 1300px) {
-  .header {
+  .headerspace {
+    font-size: 80px;
+  }
+  .headerlightning {
     font-size: 80px;
   }
 }

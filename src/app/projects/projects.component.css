@@ -34,15 +34,15 @@
 }
 
 .white-card {
-  background-color: #dadadd;
+  background-color: #efeeee;
   border: 2px solid #d8d2e0;
 
-  /* MODIFIED: Permanent tint opacity reduced for a lighter effect
+  /* MODIFIED: Permanent tint opacity reduced for a lighter effect */
   background-image: linear-gradient(
       rgba(60, 255, 60, 0.01),
       rgba(60, 255, 60, 0.01)
     ),
-    radial-gradient(rgba(172, 172, 172, 0.171) 2px, transparent 0); */
+    radial-gradient(rgba(172, 172, 172, 0.171) 2px, transparent 0);
 
   background-size: auto, 30px 30px;
   background-position: auto, -5px -5px;
@@ -81,11 +81,11 @@
 
 .white-card::before {
   /* MODIFIED: Gradient changed to a soft ellipse on the left, and opacity reduced */
-  /* background-image: radial-gradient(
+  background-image: radial-gradient(
     ellipse 40% 100% at 10% 50%,
     rgba(60, 255, 60, 0.03),
     transparent 100%
-  ); */
+  );
 }
 
 .dark-card::before {

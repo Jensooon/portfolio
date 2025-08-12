@@ -24,14 +24,20 @@
 /* Default text color */
 /* Tablet size (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
-  h1 {
+  .headerlightning {
+    font-size: 40px;
+  }
+  .headerspace {
     font-size: 40px;
   }
 }
 
 /* Mobile size (max-width: 767px) */
 @media (max-width: 767px) {
-  h1 {
+  .headerspace {
+    font-size: 25px;
+  }
+  .headerlightning {
     font-size: 25px;
   }
 }

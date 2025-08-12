@@ -21,12 +21,13 @@ html {
   height: 100%;
 }
 
+/* not in use: */
 .dark-class-header {
   background: #2e2e2e;
   color: white;
   height: 100%;
 }
-
+/* not in use: */
 .white-class-header {
   background: #e0dfdf;
   color: black;

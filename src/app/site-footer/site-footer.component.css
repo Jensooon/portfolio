@@ -14,7 +14,7 @@
 
 .wrapper p {
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
   /* text-shadow has been removed */
 }
@@ -37,7 +37,7 @@
 }
 
 .white-class-footer {
-  background: #e0dfdf;
+  background: #e3e2e2;
   color: black;
 }
 
