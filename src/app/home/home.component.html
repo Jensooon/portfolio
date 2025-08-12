@@ -70,18 +70,17 @@
     <app-about></app-about>
   </section>
   <ng-lottie
-    [class.active-red-waves]="isComponentBGDark"
-    [class.inactive-red-waves]="!isComponentBGDark"
-    [options]="waveRedoptions"
+    [class.active-space-mail]="isComponentBGDark"
+    [class.inactive-space-mail]="!isComponentBGDark"
+    [options]="spaceMail"
     width="30vw"
     height="30vh"
   ></ng-lottie>
+
   <ng-lottie
-    [class.inactive-green-waves]="isComponentBGDark"
-    [class.active-green-waves]="!isComponentBGDark"
-    [options]="waveGreenoptions"
-    width="30vw"
-    height="30vh"
+    class="lightning top-left"
+    [options]="purple7B52AELightningOptions"
+    [hidden]="isComponentBGDark"
   ></ng-lottie>
 
   <section id="projects">

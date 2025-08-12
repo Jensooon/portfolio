@@ -76,12 +76,12 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     private renderer: Renderer2
   ) {}
 
-  waveRedoptions: AnimationOptions = {
+  spaceMail: AnimationOptions = {
     path: '/assets/lottie/Space mail.json',
   };
 
-  waveGreenoptions: AnimationOptions = {
-    path: '/assets/lottie/wave green lines.json',
+  circleLightning: AnimationOptions = {
+    path: '/assets/lottie/circle lightning.json',
   };
 
   ngOnInit() {

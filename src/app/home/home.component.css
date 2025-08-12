@@ -111,17 +111,17 @@ a:hover {
   color: #5cadd2;
 }
 
-.active-red-waves {
+.active-space-mail {
   display: block;
 }
-.inactive-red-waves {
+.inactive-space-mail {
   display: none;
 }
 
-.active-green-waves {
+.active-circle-lightning {
   display: block;
 }
-.inactive-green-waves {
+.inactive-circle-lightning {
   display: none;
 }
 

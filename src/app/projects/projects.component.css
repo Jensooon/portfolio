@@ -34,30 +34,30 @@
 }
 
 .white-card {
-  background-color: #efeeee;
-  border: 2px solid #c3c6ce;
+  background-color: #dadadd;
+  border: 2px solid #d8d2e0;
 
-  /* MODIFIED: Permanent tint opacity reduced for a lighter effect */
+  /* MODIFIED: Permanent tint opacity reduced for a lighter effect
   background-image: linear-gradient(
       rgba(60, 255, 60, 0.01),
       rgba(60, 255, 60, 0.01)
     ),
-    radial-gradient(rgba(172, 172, 172, 0.171) 2px, transparent 0);
+    radial-gradient(rgba(172, 172, 172, 0.171) 2px, transparent 0); */
 
   background-size: auto, 30px 30px;
   background-position: auto, -5px -5px;
 }
 
 .dark-card {
-  background-color: #3b3b3b;
-  border: 2px solid #2e2e2e;
+  background-color: #39373f;
+  border: 2px solid #373737;
 
-  /* MODIFIED: Permanent tint opacity reduced for a lighter effect */
+  /* MODIFIED: Permanent tint opacity reduced for a lighter effect
   background-image: linear-gradient(
       rgba(255, 60, 60, 0.015),
       rgba(255, 60, 60, 0.015)
     ),
-    radial-gradient(rgba(141, 141, 141, 0.171) 2px, transparent 0);
+    radial-gradient(rgba(141, 141, 141, 0.171) 2px, transparent 0); */
 
   background-size: auto, 30px 30px;
   background-position: auto, -5px -5px;
@@ -81,11 +81,11 @@
 
 .white-card::before {
   /* MODIFIED: Gradient changed to a soft ellipse on the left, and opacity reduced */
-  background-image: radial-gradient(
+  /* background-image: radial-gradient(
     ellipse 40% 100% at 10% 50%,
     rgba(60, 255, 60, 0.03),
     transparent 100%
-  );
+  ); */
 }
 
 .dark-card::before {
@@ -137,14 +137,14 @@
 }
 
 .dark-card-button {
-  background-color: red;
+  background-color: #ae445a;
 }
 .white-card-button {
-  background-color: green;
+  background-color: #74b652;
 }
 
 .white-text-body {
-  color: rgb(107, 107, 107);
+  color: #695973;
   transition: transform 0.3s ease-out;
   font-size: 1em;
 }
@@ -162,12 +162,12 @@
 }
 /*Hover*/
 .white-card:hover {
-  border-color: green;
+  border-color: #a892c8;
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
 
 .dark-card:hover {
-  border-color: red;
+  border-color: #e8bcb9;
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
 
@@ -183,49 +183,6 @@
 .dark-card:hover .dark-text-body,
 .white-card:hover .white-text-body {
   transform: translateY(-5px);
-}
-
-.active-red-rocker {
-  display: block;
-}
-.inactive-red-rocker {
-  display: none;
-}
-.active-green-rocker {
-  display: block;
-}
-.inactive-green-rocker {
-  display: none;
-}
-
-.active-red-pong {
-  margin: -10%;
-  display: block;
-}
-.inactive-red-pong {
-  display: none;
-}
-.active-green-pong {
-  margin: -10%;
-  display: block;
-}
-.inactive-green-pong {
-  display: none;
-}
-
-.active-red-devCode {
-  margin: -10%;
-  display: block;
-}
-.inactive-red-devCode {
-  display: none;
-}
-.active-green-devCode {
-  margin: -10%;
-  display: block;
-}
-.inactive-green-devCode {
-  display: none;
 }
 
 /* Tablet size (768px to 1024px) */
