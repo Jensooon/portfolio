@@ -9,3 +9,7 @@ Website: [jensooon.github.io/portfolio](https://jensooon.github.io/portfolio)
 Credit to [Galahhad on uiverse.io](https://uiverse.io/Galahhad/silent-robin-40) for the bb8-toggle switch.
 
 Some other animations featured on the website can be found at [LottieFiles](https://lottiefiles.com/).
+
+# Build command
+
+ng build --base-href /portfolio/
