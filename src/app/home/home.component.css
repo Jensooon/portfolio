@@ -29,41 +29,6 @@
   z-index: 1; /* Keeps main content on top */
 }
 
-/* 👇 ADD THESE NEW RULES FOR THE LIGHTNING 👇 */
-/* CHANGE to this more specific selector */
-.profile-content > .lightning {
-  position: absolute;
-  z-index: 0;
-  height: 250px;
-  width: 250px;
-}
-
-/* You also need to update the positioning rules */
-.profile-content > .lightning.top-left {
-  top: 40px;
-  left: 40px;
-  transform: rotate(120deg);
-}
-
-.profile-content > .lightning.bottom-right {
-  bottom: 40px;
-  right: 40px;
-  transform: rotate(-45deg);
-}
-
-/* You also need to update the positioning rules */
-.profile-content > .lightning.top-right {
-  top: 40px;
-  right: 40px;
-  transform: rotate(-150deg);
-}
-
-.profile-content > .lightning.bottom-left {
-  bottom: 40px;
-  left: 40px;
-  transform: rotate(30deg);
-}
-
 .active-red-rocker {
   display: block;
   width: 300px;
@@ -115,6 +80,13 @@ a:hover {
   display: block;
 }
 .inactive-space-mail {
+  display: none;
+}
+
+.active-sailing-boat {
+  display: block;
+}
+.inactive-sailing-boat {
   display: none;
 }
 

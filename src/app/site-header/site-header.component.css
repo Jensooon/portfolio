@@ -119,8 +119,8 @@ a:hover {
 /* Active link styles for white theme */
 .white-navHeader.active-link {
   /* Ensure this matches the class name in HTML */
-  border-bottom: 2px solid #56941e; /* Active underline color for white theme */
-  color: #56941e; /* Optional: change text color when active in white theme */
+  border-bottom: 2px solid #4682a9; /* Active underline color for white theme */
+  color: #4682a9; /* Optional: change text color when active in white theme */
 }
 
 /* Tablet size (768px to 1024px) */

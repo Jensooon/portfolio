@@ -35,7 +35,7 @@
 
 .white-card {
   background-color: #efeeee;
-  border: 2px solid #d8d2e0;
+  border: 2px solid #e0dfdf;
 
   /* MODIFIED: Permanent tint opacity reduced for a lighter effect */
   background-image: linear-gradient(
@@ -83,7 +83,7 @@
   /* MODIFIED: Gradient changed to a soft ellipse on the left, and opacity reduced */
   background-image: radial-gradient(
     ellipse 40% 100% at 10% 50%,
-    rgba(60, 255, 60, 0.03),
+    rgba(116, 155, 194, 0.2),
     transparent 100%
   );
 }
@@ -140,11 +140,11 @@
   background-color: #ae445a;
 }
 .white-card-button {
-  background-color: #74b652;
+  background-color: #4682a9;
 }
 
 .white-text-body {
-  color: #695973;
+  color: #294c63;
   transition: transform 0.3s ease-out;
   font-size: 1em;
 }
@@ -162,7 +162,7 @@
 }
 /*Hover*/
 .white-card:hover {
-  border-color: #a892c8;
+  border-color: #f8f6e8;
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
 

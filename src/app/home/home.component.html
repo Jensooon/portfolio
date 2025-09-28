@@ -1,8 +1,8 @@
 <section appScrollReveal id="home">
   <div
     class="profile-content"
-    [class.finisher-header]="isComponentBGDark"
-    [class.white-class-footer]="!isComponentBGDark"
+    [class.finisher-header-dark]="isComponentBGDark"
+    [class.finisher-header-light]="!isComponentBGDark"
   >
     <app-title class="title"></app-title>
     <ng-lottie
@@ -14,29 +14,6 @@
       [class.inactive-green-rocker]="isComponentBGDark"
       [class.active-green-rocker]="!isComponentBGDark"
       [options]="rockerGreenOptions"
-    ></ng-lottie>
-
-    <ng-lottie
-      class="lightning top-left"
-      [options]="purple7B52AELightningOptions"
-      [hidden]="isComponentBGDark"
-    ></ng-lottie>
-
-    <ng-lottie
-      class="lightning top-right"
-      [options]="green94C773LightningOptions"
-      [hidden]="isComponentBGDark"
-    ></ng-lottie>
-
-    <ng-lottie
-      class="lightning bottom-right"
-      [options]="purple653496LightningOptions"
-      [hidden]="isComponentBGDark"
-    ></ng-lottie>
-    <ng-lottie
-      class="lightning bottom-left"
-      [options]="green74B652LightningOptions"
-      [hidden]="isComponentBGDark"
     ></ng-lottie>
   </div>
 </section>
@@ -53,6 +30,14 @@
     [class.active-space-mail]="isComponentBGDark"
     [class.inactive-space-mail]="!isComponentBGDark"
     [options]="spaceMail"
+    width="30vw"
+    height="30vh"
+  ></ng-lottie>
+
+  <ng-lottie
+    [class.active-sailing-boat]="!isComponentBGDark"
+    [class.inactive-sailing-boat]="isComponentBGDark"
+    [options]="sailingBoat"
     width="30vw"
     height="30vh"
   ></ng-lottie>

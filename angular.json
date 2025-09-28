@@ -24,7 +24,10 @@
               "src/styles.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
-            "scripts": ["src/assets/js/finisher-header.es5.min.js"]
+            "scripts": [
+              "src/assets/js/finisher-header-dark.es5.min.js",
+              "src/assets/js/finisher-header-light.es5.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -81,7 +84,10 @@
               "node_modules/devicon/devicon.min.css",
               "src/styles.css"
             ],
-            "scripts": ["src/assets/js/finisher-header.es5.min.js"]
+            "scripts": [
+              "src/assets/js/finisher-header-dark.es5.min.js",
+              "src/assets/js/finisher-header-light.es5.min.js"
+            ]
           }
         }
       }
